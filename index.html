@@ -1,111 +1,163 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mahmoud Shalabi | Portfolio</title>
-  <!-- TailwindCSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Smooth scrolling -->
-  <style>html { scroll-behavior: smooth; }</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahmoud Shalabi | Projects</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #f8fafc;
+            color: #1e293b;
+            font-family: 'Inter', sans-serif;
+        }
+        .project-box {
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            border: 1px solid #e2e8f0;
+        }
+        .project-box:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border-color: #cbd5e1;
+        }
+        .project-link:hover {
+            color: #2563eb;
+            text-decoration: underline;
+        }
+        .tech-tag {
+            background-color: #e2e8f0;
+            color: #1e40af;
+        }
+    </style>
 </head>
-<body class="bg-white font-sans text-gray-900">
-  <!-- Nav Bar -->
-  <header class="fixed w-full bg-white/70 backdrop-blur-md z-50">
-    <div class="container mx-auto flex justify-between items-center py-4 px-6">
-      <div class="text-xl font-medium">Mahmoud Shalabi</div>
-      <nav class="space-x-8 text-gray-700">
-        <a href="#about" class="hover:text-gray-900">About</a>
-        <a href="#projects" class="hover:text-gray-900">Projects</a>
-        <a href="#contact" class="hover:text-gray-900">Contact</a>
-      </nav>
+<body class="min-h-screen p-6">
+    <div class="max-w-6xl mx-auto">
+        <!-- Header -->
+        <header class="mb-12 text-center">
+            <h1 class="text-4xl font-bold text-gray-900 mb-2">Mahmoud Shalabi</h1>
+            <p class="text-gray-600">Computer Science Student at Carleton University (Second Year)</p>
+        </header>
+
+        <!-- Projects Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Student Grade Management System -->
+            <div class="project-box bg-white p-6">
+                <h2 class="text-xl font-semibold mb-4 text-gray-900 border-b pb-2">Student Grade Management System</h2>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="tech-tag text-xs px-2 py-1 rounded">HTML</span>
+                    <span class="tech-tag text-xs px-2 py-1 rounded">CSS</span>
+                    <span class="tech-tag text-xs px-2 py-1 rounded">JavaScript</span>
+                    <span class="tech-tag text-xs px-2 py-1 rounded">PHP</span>
+                    <span class="tech-tag text-xs px-2 py-1 rounded">MySQL</span>
+                </div>
+                <ul class="space-y-3 text-gray-700 text-sm">
+                    <li>
+                        Developed a web-based application for managing student grades, utilizing HTML, JavaScript, PHP, CSS, and MySQL.
+                    </li>
+                    <li>
+                        Designed a secure system for teachers and staff to input grades, using SQL best practices to prevent SQL injection and ensure data integrity.
+                    </li>
+                    <li>
+                        Implemented admin functionalities to modify database entries and manage user permissions effectively.
+                    </li>
+                    <li>
+                        Integrated CSV file import functionality to automate database creation and streamline bulk data entry.
+                    </li>
+                    <li>
+                        Gained hands-on experience with full-stack web development and database management through this project.
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Unity Projects -->
+            <div class="project-box bg-white p-6">
+                <h2 class="text-xl font-semibold mb-4 text-gray-900 border-b pb-2">Unity Projects</h2>
+                <ul class="space-y-3">
+                    <li>
+                        <a href="https://youtube.com/shorts/K4djVGsF_J0?feature=share" target="_blank" 
+                           class="project-link text-gray-700 flex items-center">
+                            <i class="fas fa-play mr-2 text-xs text-gray-500"></i>
+                            Mobile Rocket Game Prototype
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/watch?v=w95EPLBYgFM" target="_blank" 
+                           class="project-link text-gray-700 flex items-center">
+                            <i class="fas fa-play mr-2 text-xs text-gray-500"></i>
+                            Loose Grenade Prototype 2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/watch?v=lhGZ_9ufiDI" target="_blank" 
+                           class="project-link text-gray-700 flex items-center">
+                            <i class="fas fa-play mr-2 text-xs text-gray-500"></i>
+                            Low Poly FPS Prototype 3
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Unreal Engine -->
+            <div class="project-box bg-white p-6">
+                <h2 class="text-xl font-semibold mb-4 text-gray-900 border-b pb-2">Unreal Engine</h2>
+                <ul class="space-y-3">
+                    <li>
+                        <a href="https://www.youtube.com/watch?v=yYTFRs-SeQk" target="_blank" 
+                           class="project-link text-gray-700 flex items-center">
+                            <i class="fas fa-play mr-2 text-xs text-gray-500"></i>
+                            Root Motion Character Movement
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/watch?v=rwtFBHLXrdQ" target="_blank" 
+                           class="project-link text-gray-700 flex items-center">
+                            <i class="fas fa-play mr-2 text-xs text-gray-500"></i>
+                            Realistic Environment Design
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Blender -->
+            <div class="project-box bg-white p-6">
+                <h2 class="text-xl font-semibold mb-4 text-gray-900 border-b pb-2">Blender Projects</h2>
+                <ul class="space-y-3">
+                    <li>
+                        <a href="https://www.youtube.com/watch?v=DQfJys6KgXk" target="_blank" 
+                           class="project-link text-gray-700 flex items-center">
+                            <i class="fas fa-play mr-2 text-xs text-gray-500"></i>
+                            Bedroom Modelling 1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://youtu.be/another-blender-video" target="_blank" 
+                           class="project-link text-gray-700 flex items-center">
+                            <i class="fas fa-play mr-2 text-xs text-gray-500"></i>
+                            Bedroom Modelling 2
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-12 text-center text-gray-500 text-sm space-y-2">
+            <p>© 2025 Mahmoud Shalabi. All rights reserved.</p>
+            <div>
+                <a href="https://www.youtube.com/channel/UCzYmxPPmJ16NxxR0sxVWn5Q" target="_blank" 
+                   class="inline-flex items-center text-red-600 hover:text-red-700">
+                    <i class="fab fa-youtube mr-1"></i>
+                    YouTube Channel
+                </a>
+            </div>
+            <div>
+                <a href="mailto:mahmouds2006@gmail.com" class="text-gray-600 hover:text-blue-600">mahmouds2006@gmail.com</a>
+            </div>
+        </footer>
     </div>
-  </header>
 
-  <!-- Hero Section -->
-  <section id="hero" class="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-b from-gray-100 to-white">
-    <h1 class="text-6xl font-extrabold mb-4">Mahmoud Shalabi</h1>
-    <p class="text-xl text-gray-600 mb-8 max-w-xl px-4">Computer Science Student at Carleton University</p>
-    <a href="#about" class="inline-block px-8 py-4 bg-gray-900 text-white rounded-full hover:bg-gray-800 transition">Learn More</a>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="py-20">
-    <div class="container mx-auto px-6 lg:px-0">
-      <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-4xl font-semibold mb-6">About Me</h2>
-        <p class="text-lg text-gray-700">
-          Hi, I'm Mahmoud, a Computer Science student at Carleton University. Lately, I've been diving deeper into machine learning and AI and I'm always looking for new experiences.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects" class="py-20 bg-gray-50">
-    <div class="container mx-auto px-6 lg:px-0">
-      <h2 class="text-4xl font-semibold text-center mb-12">Projects</h2>
-      <div class="max-w-2xl mx-auto space-y-4">
-        <style>
-          details summary::-webkit-details-marker { display: none; }
-          details summary .icon { transition: transform 0.3s; }
-          details[open] summary .icon { transform: rotate(180deg); }
-        </style>
-
-        <details class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
-          <summary class="flex justify-between items-center cursor-pointer">
-            <span class="text-2xl font-semibold">Unity</span>
-            <span class="icon text-gray-500">▼</span>
-          </summary>
-          <ul class="mt-4 list-disc list-inside space-y-2 text-green-600">
-            <li><a href="https://youtube.com/shorts/K4djVGsF_J0?feature=share" target="_blank" class="hover:underline">Mobile Rocket Game Prototype</a></li>
-            <li><a href="https://www.youtube.com/watch?v=w95EPLBYgFM&ab_channel=Moodie" target="_blank" class="hover:underline">Loose Grende Prototype 2</a></li>
-            <li><a href="https://www.youtube.com/watch?v=lhGZ_9ufiDI&ab_channel=Moodie" target="_blank" class="hover:underline">Low Poly FPS Prototype 3</a></li>
-          </ul>
-        </details>
-
-        <details class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
-          <summary class="flex justify-between items-center cursor-pointer">
-            <span class="text-2xl font-semibold">Blender</span>
-            <span class="icon text-gray-500">▼</span>
-          </summary>
-          <ul class="mt-4 list-disc list-inside space-y-2 text-blue-600">
-            <li><a href="https://www.youtube.com/watch?v=DQfJys6KgXk&ab_channel=Moodie" target="_blank" class="hover:underline">Bedroom Modelling 1</a></li>
-            <li><a href="https://youtu.be/another-blender-video" target="_blank" class="hover:underline">Bedroom Modelling 2</a></li>
-          </ul>
-        </details>
-
-        <details class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
-          <summary class="flex justify-between items-center cursor-pointer">
-            <span class="text-2xl font-semibold">Unreal Engine</span>
-            <span class="icon text-gray-500">▼</span>
-          </summary>
-          <ul class="mt-4 list-disc list-inside space-y-2 text-purple-600">
-            <li><a href="https://www.youtube.com/watch?v=yYTFRs-SeQk&ab_channel=Moodie" target="_blank" class="hover:underline">Root Motion Character Movement</a></li>
-            <li><a href="https://www.youtube.com/watch?v=rwtFBHLXrdQ&ab_channel=Moodieo" target="_blank" class="hover:underline">Realistic Enviornement Design</a></li>
-          </ul>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="py-20">
-    <div class="container mx-auto px-6 lg:px-0">
-      <div class="max-w-md mx-auto text-center">
-        <h2 class="text-4xl font-semibold mb-6">Get in Touch</h2>
-        <ul class="space-y-4">
-          <!-- <li><a href="https://github.com/yourusername" target="_blank" class="text-blue-600 hover:underline">GitHub</a></li> -->
-          <li><a href="https://www.youtube.com/channel/UCzYmxPPmJ16NxxR0sxVWn5Q" target="_blank" class="text-red-600 hover:underline">YouTube</a></li>
-          <li><a href="mailto:mahmouds2006@gmail.com" class="text-gray-800 hover:underline">mahmouds2006@gmail.com</a></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="py-6 text-center text-gray-500 text-sm">
-    © 2025 Mahmoud Shalabi. All rights reserved.
-  </footer>
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
 </body>
 </html>
