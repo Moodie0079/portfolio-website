@@ -8,18 +8,15 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Inter Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <!-- Navbar Script -->
+  <script src="navbar.js"></script>
   <style>
     body { font-family: 'Inter', sans-serif; }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
   <!-- ===== NAVBAR ===== -->
-  <nav class="bg-white/80 backdrop-blur sticky top-0 z-50 shadow-sm">
-    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-      <a href="index.html" class="text-gray-700 hover:text-blue-600 transition">← Back to Portfolio</a>
-      <span class="font-semibold">Mahmoud&nbsp;Shalabi</span>
-    </div>
-  </nav>
+  <div id="navbar-container"></div>
 
   <!-- ===== HERO ===== -->
   <header class="bg-gradient-to-br from-blue-50 to-white py-16">
@@ -317,5 +314,13 @@
   <footer class="text-center text-gray-500 text-sm py-10">
     © 2025 Mahmoud&nbsp;Shalabi
   </footer>
+
+  <script>
+    // Initialize navbar when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      loadNavbar(false); // false = not home page
+    });
+  </script>
+
 </body>
 </html>
