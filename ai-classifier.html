@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Image Classifier | Mahmoud Shalabi</title>
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Inter Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- ===== NAVBAR ===== -->
+  <nav class="bg-white/80 backdrop-blur sticky top-0 z-50 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="text-gray-700 hover:text-blue-600 transition">← Back to Portfolio</a>
+      <span class="font-semibold">Mahmoud&nbsp;Shalabi</span>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <header class="bg-gradient-to-br from-blue-50 to-white py-16">
+    <div class="max-w-4xl mx-auto text-center px-4">
+      <h1 class="text-4xl sm:text-5xl font-extrabold mb-4">AI Image Classifier</h1>
+      <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto mb-6">
+        A custom-built convolutional neural network that classifies images of cats and dogs, developed entirely from scratch using TensorFlow and Flask.
+      </p>
+      <a href="https://ai.mahmoudshalabi.com" target="_blank" class="inline-block px-8 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition">
+        Try Live Demo&nbsp;↗
+      </a>
+    </div>
+  </header>
+
+  <!-- ===== HOW IT'S MADE ===== -->
+  <section class="max-w-5xl mx-auto px-4 py-16">
+    <h2 class="text-3xl font-bold mb-8">How It's Made</h2>
+    <div class="bg-white rounded-xl shadow-sm p-8 mb-8">
+      <p class="text-gray-700 leading-relaxed">
+        This image classification web application was developed entirely from scratch using Python, TensorFlow, Flask, and vanilla frontend. It allows users to upload an image of a cat or dog and returns a prediction based on a custom trained convolutional neural network (CNN).
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== MODEL INFO ===== -->
+  <section class="max-w-5xl mx-auto px-4 pb-16">
+    <h2 class="text-3xl font-bold mb-8">Model Info</h2>
+    <div class="bg-white rounded-xl shadow-sm p-8 mb-8">
+      <p class="text-gray-700 leading-relaxed mb-6">
+        This model was trained on a dataset of ~19,000 labeled images of cats and dogs. The model was implemented using tf.keras.Sequential, allowing layers to be stacked sequentially so data flows straight through from the input image to the final prediction. The network was built entirely from scratch without pretrained weights or external model libraries.
+      </p>
+      <div class="bg-blue-50 rounded-lg p-6">
+        <h3 class="text-lg font-semibold text-blue-800 mb-3">Architecture</h3>
+        <p class="text-blue-700 text-sm">
+          Three convolutional blocks (Conv2D + MaxPooling2D) followed by a Flatten layer and dense layers with softmax activation for binary classification.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TECHNICAL IMPLEMENTATION ===== -->
+  <section class="max-w-5xl mx-auto px-4 pb-16">
+    <h2 class="text-3xl font-bold mb-8">Technical Implementation</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      
+      <!-- Backend -->
+      <div class="bg-white rounded-xl shadow-sm p-8">
+        <h3 class="text-xl font-semibold mb-4 text-green-600">Backend</h3>
+        <p class="text-gray-700 text-sm mb-4">
+          After training, the model was saved in .h5 format and loaded by a Flask app. The backend exposes a GET route for this page and a POST route (/predict) that accepts an image, preprocesses it with Pillow, and returns JSON containing the predicted label and confidence.
+        </p>
+        <div class="bg-green-50 rounded-lg p-3">
+          <p class="text-xs text-green-700"><strong>Technologies:</strong> Python, Flask, TensorFlow, Pillow</p>
+        </div>
+      </div>
+
+      <!-- Frontend -->
+      <div class="bg-white rounded-xl shadow-sm p-8">
+        <h3 class="text-xl font-semibold mb-4 text-blue-600">Frontend</h3>
+        <p class="text-gray-700 text-sm mb-4">
+          The interface is plain HTML styled with TailwindCSS. JavaScript handles image preview, disables/enables the Predict button, shows a spinner during inference, and animates the confidence bar once a result is received.
+        </p>
+        <div class="bg-blue-50 rounded-lg p-3">
+          <p class="text-xs text-blue-700"><strong>Technologies:</strong> HTML, TailwindCSS, JavaScript</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CHALLENGES & SOLUTIONS ===== -->
+  <section class="max-w-5xl mx-auto px-4 pb-16">
+    <h2 class="text-3xl font-bold mb-8">Problems & Solutions</h2>
+    <div class="space-y-6">
+      
+      <!-- Overfitting Problem -->
+      <div class="bg-white rounded-xl shadow-sm p-6 border-l-4 border-red-400">
+        <h3 class="text-lg font-semibold mb-2 text-red-600">Overfitting Issues</h3>
+        <p class="text-gray-600 mb-3"><strong>Problem:</strong> Initial accuracy was poor due to overfitting</p>
+        <p class="text-gray-700"><strong>Solution:</strong> Introduced data augmentation (RandomFlip, RandomRotation, RandomZoom) applied only to the training set. Also added an EarlyStopping callback that monitors validation loss and restores the best weights when no improvement is seen for 10 epochs.</p>
+      </div>
+
+      <!-- GPU Optimization -->
+      <div class="bg-white rounded-xl shadow-sm p-6 border-l-4 border-green-400">
+        <h3 class="text-lg font-semibold mb-2 text-green-600">GPU Memory Management</h3>
+        <p class="text-gray-600 mb-3"><strong>Challenge:</strong> Efficient GPU memory usage during training</p>
+        <p class="text-gray-700"><strong>Solution:</strong> TensorFlow was configured with tf.config.experimental.set_memory_growth() so GPU memory is allocated dynamically, preventing it from pre‑allocating all available VRAM and allowing other GPU processes to run concurrently.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="text-center text-gray-500 text-sm py-10">
+    © 2025 Mahmoud&nbsp;Shalabi
+  </footer>
+</body>
+</html>

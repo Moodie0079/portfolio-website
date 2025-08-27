@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CourseScout | Mahmoud Shalabi</title>
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Inter Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- ===== NAVBAR ===== -->
+  <nav class="bg-white/80 backdrop-blur sticky top-0 z-50 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="text-gray-700 hover:text-blue-600 transition">← Back to Portfolio</a>
+      <span class="font-semibold">Mahmoud&nbsp;Shalabi</span>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <header class="bg-gradient-to-br from-blue-50 to-white py-16">
+    <div class="max-w-4xl mx-auto text-center px-4">
+      <div class="inline-flex items-center gap-2 bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium mb-4">
+        <div class="w-2 h-2 bg-yellow-500 rounded-full animate-pulse"></div>
+        Work in Progress
+      </div>
+      <h1 class="text-4xl sm:text-5xl font-extrabold mb-4">CourseScout</h1>
+      <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+        AI-powered course insight platform that helps university students make informed decisions about their course selections through Reddit analysis and AI insights. Currently focused on Carleton University with plans to expand to other universities.
+      </p>
+    </div>
+  </header>
+
+  <!-- ===== PROJECT OVERVIEW ===== -->
+  <section class="max-w-6xl mx-auto px-4 py-16">
+    <h2 class="text-3xl font-bold mb-8">What CourseScout Does</h2>
+    <div class="bg-white rounded-xl shadow-sm p-8 mb-12">
+      <p class="text-gray-700 leading-relaxed mb-6">
+        CourseScout is a course insight platform that helps university students make informed decisions about their course selections. Currently focused on Carleton University with plans to expand to other universities, the platform analyzes years of student conversations on r/CarletonU to extract real student experiences and provide comprehensive course insights. The modular architecture enables easy adaptation to other universities' course catalogs and subreddit communities.
+      </p>
+      
+      <h3 class="text-xl font-semibold mb-4">How It Works</h3>
+      <div class="bg-gray-50 rounded-lg p-6 mb-8">
+        <div class="grid md:grid-cols-4 gap-4 text-center">
+          <div class="space-y-2">
+            <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto font-bold text-lg">1</div>
+            <h4 class="font-medium">Student Input</h4>
+            <p class="text-sm text-gray-600">Student types in a course code (e.g., COMP 1005)</p>
+          </div>
+          <div class="space-y-2">
+            <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto font-bold text-lg">2</div>
+            <h4 class="font-medium">Database Check</h4>
+            <p class="text-sm text-gray-600">System verifies course exists and retrieves pre-crawled Reddit data</p>
+          </div>
+          <div class="space-y-2">
+            <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center mx-auto font-bold text-lg">3</div>
+            <h4 class="font-medium">AI Analysis</h4>
+            <p class="text-sm text-gray-600">AI processes discussions to extract insights, ratings, and experiences</p>
+          </div>
+          <div class="space-y-2">
+            <div class="w-12 h-12 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center mx-auto font-bold text-lg">4</div>
+            <h4 class="font-medium">Results Display</h4>
+            <p class="text-sm text-gray-600">Comprehensive insights delivered in 3-5 seconds with source citations</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-xl font-semibold mb-4">Key Capabilities</h3>
+      <div class="grid md:grid-cols-2 gap-6 mb-8">
+        <div class="space-y-3">
+          <div class="flex items-start gap-3">
+            <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+            <div>
+              <strong>Reddit Discussion Analysis:</strong> Searches through years of student conversations on r/CarletonU
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+            <div>
+              <strong>AI-Powered Insights:</strong> Uses OpenAI GPT-4o-mini to analyze discussions and generate comprehensive insights
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+            <div>
+              <strong>Professor Integration:</strong> Connects mentioned professors with RateMyProfessors data
+            </div>
+          </div>
+        </div>
+        <div class="space-y-3">
+          <div class="flex items-start gap-3">
+            <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+            <div>
+              <strong>Course Catalog Verification:</strong> Validates courses against Carleton's official catalog
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+            <div>
+              <strong>Real-time Analysis:</strong> Provides insights in 3-5 seconds using pre-crawled database
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+            <div>
+              <strong>Comprehensive Data:</strong> 4,323+ courses from Carleton's official catalog
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-xl font-semibold mb-4">What Students Get</h3>
+      <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-6">
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div>
+            <h4 class="font-semibold mb-3 text-blue-700">📊 Data-Driven Insights</h4>
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li>• Difficulty and workload ratings (1-10 scale)</li>
+              <li>• Professor ratings from RateMyProfessors</li>
+              <li>• Course prerequisites and expectations</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-3 text-purple-700">💬 Real Student Experiences</h4>
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li>• Authentic quotes from Reddit discussions</li>
+              <li>• Pros and cons from actual students</li>
+              <li>• Common benefits and challenges</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TECHNOLOGY STACK ===== -->
+  <section class="max-w-6xl mx-auto px-4 py-16">
+    <h2 class="text-3xl font-bold mb-8">Technology Stack</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
+      
+      <!-- Frontend -->
+      <div class="bg-white rounded-xl shadow-sm p-6">
+        <h3 class="text-lg font-semibold mb-4 text-blue-600">Frontend</h3>
+        <div class="space-y-2">
+          <span class="block px-3 py-1 rounded-full bg-gray-100 text-sm">TypeScript</span>
+          <span class="block px-3 py-1 rounded-full bg-gray-100 text-sm">React 19.1.0</span>
+          <span class="block px-3 py-1 rounded-full bg-gray-100 text-sm">Next.js 15.4.6</span>
+          <span class="block px-3 py-1 rounded-full bg-gray-100 text-sm">Tailwind CSS</span>
+          <span class="block px-3 py-1 rounded-full bg-gray-100 text-sm">Lucide React</span>
+        </div>
+      </div>
+
+      <!-- Backend -->
+      <div class="bg-white rounded-xl shadow-sm p-6">
+        <h3 class="text-lg font-semibold mb-4 text-green-600">Backend</h3>
+        <div class="space-y-2">
+          <span class="block px-3 py-1 rounded-full bg-gray-100 text-sm">Node.js</span>
+          <span class="block px-3 py-1 rounded-full bg-gray-100 text-sm">TypeScript</span>
+          <span class="block px-3 py-1 rounded-full bg-gray-100 text-sm">Prisma ORM</span>
+          <span class="block px-3 py-1 rounded-full bg-gray-100 text-sm">SQLite/PostgreSQL</span>
+        </div>
+      </div>
+
+      <!-- AI & APIs -->
+      <div class="bg-white rounded-xl shadow-sm p-6">
+        <h3 class="text-lg font-semibold mb-4 text-purple-600">AI & APIs</h3>
+        <div class="space-y-2">
+          <span class="block px-3 py-1 rounded-full bg-gray-100 text-sm">OpenAI GPT-4o-mini</span>
+          <span class="block px-3 py-1 rounded-full bg-gray-100 text-sm">Reddit API</span>
+          <span class="block px-3 py-1 rounded-full bg-gray-100 text-sm">RateMyProfessors API</span>
+        </div>
+      </div>
+
+      <!-- Data Processing -->
+      <div class="bg-white rounded-xl shadow-sm p-6">
+        <h3 class="text-lg font-semibold mb-4 text-indigo-600">Data Processing</h3>
+        <div class="space-y-2">
+          <span class="block px-3 py-1 rounded-full bg-gray-100 text-sm">Custom Crawlers</span>
+          <span class="block px-3 py-1 rounded-full bg-gray-100 text-sm">Content Filtering</span>
+          <span class="block px-3 py-1 rounded-full bg-gray-100 text-sm">Duplicate Detection</span>
+        </div>
+      </div>
+
+      <!-- Development Tools -->
+      <div class="bg-white rounded-xl shadow-sm p-6">
+        <h3 class="text-lg font-semibold mb-4 text-orange-600">Dev Tools</h3>
+        <div class="space-y-2">
+          <span class="block px-3 py-1 rounded-full bg-gray-100 text-sm">ESLint</span>
+          <span class="block px-3 py-1 rounded-full bg-gray-100 text-sm">TypeScript</span>
+          <span class="block px-3 py-1 rounded-full bg-gray-100 text-sm">Prisma</span>
+          <span class="block px-3 py-1 rounded-full bg-gray-100 text-sm">TSX</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section class="max-w-6xl mx-auto px-4 py-16">
+    <h2 class="text-3xl font-bold mb-8">System Architecture</h2>
+    
+    <!-- Frontend -->
+    <div class="mb-12">
+      <div class="bg-blue-600 text-white px-6 py-3 rounded-t-lg">
+        <h3 class="text-lg font-semibold">Frontend</h3>
+      </div>
+      <div class="bg-white border-x border-b border-gray-200 rounded-b-lg p-6">
+        <p class="text-gray-700 mb-4">Student enters course code → React validates format with input validation and SQL injection prevention → makes database query → displays results with comprehensive error handling and graceful degradation.</p>
+        <div class="text-sm text-blue-700 bg-blue-50 rounded p-3">
+          <strong>Technologies:</strong> React, Next.js, TypeScript, Tailwind CSS
+        </div>
+      </div>
+    </div>
+
+    <!-- Backend API & Database -->
+    <div class="mb-12">
+      <div class="bg-green-600 text-white px-6 py-3 rounded-t-lg">
+        <h3 class="text-lg font-semibold">Backend API & Database Operations</h3>
+      </div>
+      <div class="bg-white border-x border-b border-gray-200 rounded-b-lg p-6">
+        <div class="space-y-4">
+          <div>
+            <h4 class="font-semibold text-gray-800 mb-2">1. Database Query</h4>
+            <p class="text-sm text-gray-600">Receives course code → queries PostgreSQL database using Prisma ORM → retrieves pre-stored Reddit posts and comments for that course</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-800 mb-2">2. AI Analysis</h4>
+            <p class="text-sm text-gray-600">Processes up to 1,000 discussions per course query → strict content filtering prevents course code contamination → sends to OpenAI GPT-4o-mini → receives structured analysis with difficulty ratings, pros/cons, and student quotes</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-800 mb-2">3. Professor Data</h4>
+            <p class="text-sm text-gray-600">Extracts professor names from Reddit discussions → fetches ratings and reviews from RateMyProfessors API → combines with course insights</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-800 mb-2">4. Response</h4>
+            <p class="text-sm text-gray-600">Packages AI insights, professor data, and source citations with confidence scoring → returns to frontend typically under 3 seconds</p>
+          </div>
+        </div>
+        <div class="text-sm text-green-700 bg-green-50 rounded p-3 mt-4">
+          <strong>Technologies:</strong> Node.js, Prisma ORM, PostgreSQL, OpenAI API, RateMyProfessors API<br>
+          <strong>Enterprise Features:</strong> Circuit breaker pattern for API resilience, comprehensive error handling, input validation
+        </div>
+      </div>
+    </div>
+
+    <!-- Data Collection & Crawling -->
+    <div class="mb-12">
+      <div class="bg-purple-600 text-white px-6 py-3 rounded-t-lg">
+        <h3 class="text-lg font-semibold">Data Collection & Crawling System</h3>
+      </div>
+      <div class="bg-white border-x border-b border-gray-200 rounded-b-lg p-6">
+        <div class="space-y-4">
+          <div>
+            <h4 class="font-semibold text-gray-800 mb-2">1. Course Discovery</h4>
+            <p class="text-sm text-gray-600">Scrapes Carleton University's official course catalog → extracts 4,323+ course codes and details → stores in database</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-800 mb-2">2. Reddit Crawling</h4>
+            <p class="text-sm text-gray-600">Searches r/CarletonU subreddit for each course code → analyzes up to 500 comments per post → respects Reddit API rate limits → built-in duplicate detection and data validation</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-800 mb-2">3. Progress Tracking</h4>
+            <p class="text-sm text-gray-600">Tracks crawling progress in JSON files → can resume interrupted jobs → handles API failures with retry logic → reports completion status</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-800 mb-2">4. Database Storage</h4>
+            <p class="text-sm text-gray-600">Stores all collected data in structured PostgreSQL tables → creates relationships between courses, posts, and mentions → enables fast queries</p>
+          </div>
+        </div>
+        <div class="text-sm text-purple-700 bg-purple-50 rounded p-3 mt-4">
+          <strong>Why Pre-crawling:</strong> During development, live Reddit API calls would take 30+ seconds per course query and hit rate limits. Pre-crawling eliminates these issues entirely, enabling sub-3-second responses.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CHALLENGES & SOLUTIONS ===== -->
+  <section class="max-w-6xl mx-auto px-4 py-16">
+    <h2 class="text-3xl font-bold mb-8">Challenges & Solutions</h2>
+    <div class="space-y-6">
+      
+      <!-- Challenge 1 -->
+      <div class="bg-white rounded-xl shadow-sm p-6 border-l-4 border-red-400">
+        <h3 class="text-lg font-semibold mb-2 text-red-600">Initial Live API Approach</h3>
+        <p class="text-gray-600 mb-3"><strong>Problem:</strong> Initial version made live Reddit API calls for each course request, taking several minutes per course and hitting rate limits frequently, making the system slow and inefficient</p>
+        <p class="text-gray-700"><strong>Solution:</strong> Completely redesigned to use a database-driven architecture where data is pre-crawled and stored, reducing response times from minutes to 3-5 seconds</p>
+      </div>
+
+      <!-- Challenge 2 -->
+      <div class="bg-white rounded-xl shadow-sm p-6 border-l-4 border-yellow-400">
+        <h3 class="text-lg font-semibold mb-2 text-yellow-600">Rate Limiting During Database Crawling</h3>
+        <p class="text-gray-600 mb-3"><strong>Problem:</strong> Reddit API rate limits during the bulk crawling process for populating the database caused failures and slow data collection</p>
+        <p class="text-gray-700"><strong>Solution:</strong> Implemented intelligent rate limiting with header tracking, added retry logic with exponential backoff, and built progress tracking to resume interrupted crawling jobs</p>
+      </div>
+
+      <!-- Challenge 3 -->
+      <div class="bg-white rounded-xl shadow-sm p-6 border-l-4 border-purple-400">
+        <h3 class="text-lg font-semibold mb-2 text-purple-600">Professor Name Extraction Issues</h3>
+        <p class="text-gray-600 mb-3"><strong>Problem:</strong> AI extracting invalid professor names (single letters, generic terms like "professor")</p>
+        <p class="text-gray-700"><strong>Solution:</strong> Added comprehensive filtering to reject invalid names, required minimum name length and first+last name format, filtered out generic terms like "instructor", "teacher", "prof"</p>
+      </div>
+
+      <!-- Challenge 4 -->
+      <div class="bg-white rounded-xl shadow-sm p-6 border-l-4 border-purple-400">
+        <h3 class="text-lg font-semibold mb-2 text-purple-600">Bulk Processing Reliability</h3>
+        <p class="text-gray-600 mb-3"><strong>Problem:</strong> Bulk crawling jobs failing mid-process, losing progress</p>
+        <p class="text-gray-700"><strong>Solution:</strong> Implemented persistent progress tracking with JSON files, added resume capability for interrupted jobs, built comprehensive error reporting and retry logic</p>
+      </div>
+    </div>
+  </section>
+
+
+
+  <footer class="text-center text-gray-500 text-sm py-10">
+    © 2025 Mahmoud&nbsp;Shalabi
+  </footer>
+</body>
+</html>
