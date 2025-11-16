@@ -4,117 +4,104 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI Image Classifier | Mahmoud Shalabi</title>
-  <!-- TailwindCSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Inter Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <!-- Navbar Script -->
   <script src="navbar.js"></script>
   <style>
     body { font-family: 'Inter', sans-serif; }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
-  <!-- ===== NAVBAR ===== -->
+  
   <div id="navbar-container"></div>
 
-  <!-- ===== HERO ===== -->
-  <header class="bg-gradient-to-br from-blue-50 to-white py-16">
+  <header class="bg-gradient-to-br from-blue-50 to-white py-16 pt-32">
     <div class="max-w-4xl mx-auto text-center px-4">
       <h1 class="text-4xl sm:text-5xl font-extrabold mb-4">AI Image Classifier</h1>
       <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto mb-6">
         A custom-built convolutional neural network that classifies images of cats and dogs, developed entirely from scratch using TensorFlow and Flask.
       </p>
-      <a href="https://ai.mahmoudshalabi.com" target="_blank" class="inline-block px-8 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition">
+      <a href="https://ai.mahmoudshalabi.com" target="_blank" class="inline-block px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-full shadow-lg hover:from-blue-700 hover:to-blue-800 transition">
         Try Live Demo&nbsp;↗
       </a>
     </div>
   </header>
 
-  <!-- ===== HOW IT'S MADE ===== -->
   <section class="max-w-5xl mx-auto px-4 py-16">
-    <h2 class="text-3xl font-bold mb-8">How It's Made</h2>
-    <div class="bg-white rounded-xl shadow-sm p-8 mb-8">
-      <p class="text-gray-700 leading-relaxed">
-        This image classification web application was developed entirely from scratch using Python, TensorFlow, Flask, and vanilla frontend. It allows users to upload an image of a cat or dog and returns a prediction based on a custom trained convolutional neural network (CNN).
+    <h2 class="text-2xl font-semibold mb-6">Project Overview</h2>
+    <p class="text-gray-700 leading-relaxed mb-8">
+      This image classification web application was developed entirely from scratch using Python, TensorFlow, Flask, and vanilla frontend. It allows users to upload an image of a cat or dog and returns a prediction based on a custom trained convolutional neural network (CNN).
+    </p>
+
+    <h3 class="text-xl font-semibold mb-4">Model Info</h3>
+    <p class="text-gray-700 leading-relaxed mb-4">
+      This model was trained on a dataset of ~19,000 labeled images of cats and dogs. The model was implemented using tf.keras.Sequential, allowing layers to be stacked sequentially so data flows straight through from the input image to the final prediction. The network was built entirely from scratch without pretrained weights or external model libraries.
+    </p>
+    <p class="text-gray-700 leading-relaxed mb-8 ml-4">
+      <strong>Architecture:</strong> Three convolutional blocks (Conv2D + MaxPooling2D) followed by a Flatten layer and dense layers with softmax activation for binary classification.
+    </p>
+
+    <h3 class="text-xl font-semibold mb-4">Key Features</h3>
+    <ul class="space-y-3 list-disc list-inside text-gray-700 mb-8">
+      <li>Custom trained convolutional neural network (CNN) for binary image classification</li>
+      <li>Trained on ~19,000 labeled images of cats and dogs</li>
+      <li>Built using tf.keras.Sequential architecture from scratch without pretrained weights</li>
+      <li>Three convolutional blocks (Conv2D + MaxPooling2D) with dense layers and softmax activation</li>
+      <li>Data augmentation (RandomFlip, RandomRotation, RandomZoom) applied to training set to prevent overfitting</li>
+      <li>EarlyStopping callback that monitors validation loss and restores best weights</li>
+      <li>GPU optimization with dynamic memory allocation using tf.config.experimental.set_memory_growth()</li>
+      <li>Flask backend that accepts image uploads, preprocesses with Pillow, and returns predictions</li>
+      <li>Plain HTML frontend styled with TailwindCSS with JavaScript handling image preview and results display</li>
+      <li>Model saved in .h5 format and loaded by Flask app for inference</li>
+    </ul>
+
+    <h3 class="text-xl font-semibold mb-4">Technical Implementation</h3>
+    
+    <div class="mb-6">
+      <p class="text-gray-700 font-semibold mb-2">Backend:</p>
+      <p class="text-gray-700 leading-relaxed mb-2 ml-4">
+        After training, the model was saved in .h5 format and loaded by a Flask app. The backend exposes a GET route for this page and a POST route (/predict) that accepts an image, preprocesses it with Pillow, and returns JSON containing the predicted label and confidence.
       </p>
     </div>
-  </section>
 
-  <!-- ===== MODEL INFO ===== -->
-  <section class="max-w-5xl mx-auto px-4 pb-16">
-    <h2 class="text-3xl font-bold mb-8">Model Info</h2>
-    <div class="bg-white rounded-xl shadow-sm p-8 mb-8">
-      <p class="text-gray-700 leading-relaxed mb-6">
-        This model was trained on a dataset of ~19,000 labeled images of cats and dogs. The model was implemented using tf.keras.Sequential, allowing layers to be stacked sequentially so data flows straight through from the input image to the final prediction. The network was built entirely from scratch without pretrained weights or external model libraries.
+    <div class="mb-8">
+      <p class="text-gray-700 font-semibold mb-2">Frontend:</p>
+      <p class="text-gray-700 leading-relaxed mb-4 ml-4">
+        The interface is plain HTML styled with TailwindCSS. JavaScript handles image preview, disables/enables the Predict button, shows a spinner during inference, and animates the confidence bar once a result is received.
       </p>
-      <div class="bg-blue-50 rounded-lg p-6">
-        <h3 class="text-lg font-semibold text-blue-800 mb-3">Architecture</h3>
-        <p class="text-blue-700 text-sm">
-          Three convolutional blocks (Conv2D + MaxPooling2D) followed by a Flatten layer and dense layers with softmax activation for binary classification.
-        </p>
-      </div>
+    </div>
+
+    <h3 class="text-xl font-semibold mb-4">Problems & Solutions</h3>
+    <p class="text-gray-700 leading-relaxed mb-4"><strong>Overfitting Issues:</strong></p>
+    <p class="text-gray-700 leading-relaxed mb-2 ml-4">
+      <strong>Problem:</strong> Initial accuracy was poor due to overfitting.
+    </p>
+    <p class="text-gray-700 leading-relaxed mb-8 ml-4">
+      <strong>Solution:</strong> Introduced data augmentation (RandomFlip, RandomRotation, RandomZoom) applied only to the training set. Also added an EarlyStopping callback that monitors validation loss and restores the best weights when no improvement is seen for 10 epochs.
+    </p>
+
+    <h3 class="text-xl font-semibold mb-4">Technology Stack</h3>
+    <div class="flex flex-wrap gap-3 mb-8">
+      <span class="px-3 py-1 rounded-full bg-gray-100 text-sm">Python</span>
+      <span class="px-3 py-1 rounded-full bg-gray-100 text-sm">TensorFlow</span>
+      <span class="px-3 py-1 rounded-full bg-gray-100 text-sm">Keras</span>
+      <span class="px-3 py-1 rounded-full bg-gray-100 text-sm">Flask</span>
+      <span class="px-3 py-1 rounded-full bg-gray-100 text-sm">Pillow</span>
+      <span class="px-3 py-1 rounded-full bg-gray-100 text-sm">HTML</span>
+      <span class="px-3 py-1 rounded-full bg-gray-100 text-sm">TailwindCSS</span>
+      <span class="px-3 py-1 rounded-full bg-gray-100 text-sm">JavaScript</span>
     </div>
   </section>
 
-  <!-- ===== TECHNICAL IMPLEMENTATION ===== -->
-  <section class="max-w-5xl mx-auto px-4 pb-16">
-    <h2 class="text-3xl font-bold mb-8">Technical Implementation</h2>
-    <div class="grid md:grid-cols-2 gap-8">
-      
-      <!-- Backend -->
-      <div class="bg-white rounded-xl shadow-sm p-8">
-        <h3 class="text-xl font-semibold mb-4 text-green-600">Backend</h3>
-        <p class="text-gray-700 text-sm mb-4">
-          After training, the model was saved in .h5 format and loaded by a Flask app. The backend exposes a GET route for this page and a POST route (/predict) that accepts an image, preprocesses it with Pillow, and returns JSON containing the predicted label and confidence.
-        </p>
-        <div class="bg-green-50 rounded-lg p-3">
-          <p class="text-xs text-green-700"><strong>Technologies:</strong> Python, Flask, TensorFlow, Pillow</p>
-        </div>
-      </div>
-
-      <!-- Frontend -->
-      <div class="bg-white rounded-xl shadow-sm p-8">
-        <h3 class="text-xl font-semibold mb-4 text-blue-600">Frontend</h3>
-        <p class="text-gray-700 text-sm mb-4">
-          The interface is plain HTML styled with TailwindCSS. JavaScript handles image preview, disables/enables the Predict button, shows a spinner during inference, and animates the confidence bar once a result is received.
-        </p>
-        <div class="bg-blue-50 rounded-lg p-3">
-          <p class="text-xs text-blue-700"><strong>Technologies:</strong> HTML, TailwindCSS, JavaScript</p>
-        </div>
-      </div>
+  <footer class="bg-white py-10 border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <p class="text-gray-600">Copyright © 2025 - All right reserved by Mahmoud Shalabi</p>
     </div>
-  </section>
-
-  <!-- ===== CHALLENGES & SOLUTIONS ===== -->
-  <section class="max-w-5xl mx-auto px-4 pb-16">
-    <h2 class="text-3xl font-bold mb-8">Problems & Solutions</h2>
-    <div class="space-y-6">
-      
-      <!-- Overfitting Problem -->
-      <div class="bg-white rounded-xl shadow-sm p-6 border-l-4 border-red-400">
-        <h3 class="text-lg font-semibold mb-2 text-red-600">Overfitting Issues</h3>
-        <p class="text-gray-600 mb-3"><strong>Problem:</strong> Initial accuracy was poor due to overfitting</p>
-        <p class="text-gray-700"><strong>Solution:</strong> Introduced data augmentation (RandomFlip, RandomRotation, RandomZoom) applied only to the training set. Also added an EarlyStopping callback that monitors validation loss and restores the best weights when no improvement is seen for 10 epochs.</p>
-      </div>
-
-      <!-- GPU Optimization -->
-      <div class="bg-white rounded-xl shadow-sm p-6 border-l-4 border-green-400">
-        <h3 class="text-lg font-semibold mb-2 text-green-600">GPU Memory Management</h3>
-        <p class="text-gray-600 mb-3"><strong>Challenge:</strong> Efficient GPU memory usage during training</p>
-        <p class="text-gray-700"><strong>Solution:</strong> TensorFlow was configured with tf.config.experimental.set_memory_growth() so GPU memory is allocated dynamically, preventing it from pre‑allocating all available VRAM and allowing other GPU processes to run concurrently.</p>
-      </div>
-    </div>
-  </section>
-
-  <footer class="text-center text-gray-500 text-sm py-10">
-    © 2025 Mahmoud&nbsp;Shalabi
   </footer>
 
   <script>
-    // Initialize navbar when page loads
     document.addEventListener('DOMContentLoaded', function() {
-      loadNavbar(false); // false = not home page
+      loadNavbar(false);
     });
   </script>
 

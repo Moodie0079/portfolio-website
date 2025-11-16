@@ -4,11 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mahmoud Shalabi | Portfolio</title>
-  <!-- TailwindCSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Inter Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <!-- Navbar Script -->
   <script src="navbar.js"></script>
   <style>
     body { font-family: 'Inter', sans-serif; }
@@ -16,209 +13,241 @@
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
-  <!-- ===== NAVBAR ===== -->
-  <nav class="bg-white/80 backdrop-blur sticky top-0 z-50 shadow-sm">
-    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-      <a href="#" class="text-xl sm:text-2xl font-bold text-gray-900 min-w-0">Mahmoud&nbsp;Shalabi</a>
-      
-      <!-- Desktop Navigation - Centered -->
-      <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2">
-        <ul class="flex gap-8 font-medium whitespace-nowrap">
-          <li><a href="#projects" class="hover:text-blue-600 transition">Projects</a></li>
-          <li><a href="#skills" class="hover:text-blue-600 transition">Skills</a></li>
-          <li><a href="#contact" class="hover:text-blue-600 transition">Contact</a></li>
-        </ul>
-      </div>
-      
-      <!-- Desktop Actions -->
-      <div class="hidden md:flex items-center">
-        <a href="https://www.linkedin.com/in/mahmoud-shalabi-07686433b/" target="_blank" class="px-4 py-2 text-sm font-semibold bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition flex items-center gap-1">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clip-rule="evenodd"></path>
-          </svg>
-          LinkedIn
-        </a>
-      </div>
-      
-      <!-- Mobile Menu Button -->
-      <div class="md:hidden">
-        <button id="mobileMenuToggle" class="p-2 rounded-lg hover:bg-gray-100 transition" aria-label="Toggle mobile menu">
-          <svg id="hamburgerIcon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-          <svg id="closeIcon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-          </svg>
-        </button>
-      </div>
-    </div>
-    
-    <!-- Mobile Navigation Menu -->
-    <div id="mobileMenu" class="md:hidden hidden bg-white/95 backdrop-blur border-t border-gray-200">
-      <div class="px-4 py-6 space-y-4">
-        <a href="#projects" class="block py-2 hover:text-blue-600 transition mobile-nav-link">Projects</a>
-        <a href="#skills" class="block py-2 hover:text-blue-600 transition mobile-nav-link">Skills</a>
-        <a href="#contact" class="block py-2 hover:text-blue-600 transition mobile-nav-link">Contact</a>
-        <a href="https://www.linkedin.com/in/mahmoud-shalabi-07686433b/" target="_blank" class="block w-full px-4 py-2 text-center font-semibold bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition mt-4 flex items-center justify-center gap-2">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clip-rule="evenodd"></path>
-          </svg>
-          LinkedIn
-        </a>
-      </div>
-    </div>
-  </nav>
+  
+  <div id="navbar-container"></div>
 
-  <!-- ===== HERO ===== -->
-  <header class="bg-gradient-to-br from-blue-50 to-white py-20 sm:py-28">
+  <!-- Hero Section -->
+  <header class="bg-gradient-to-br from-blue-50 to-white py-20 sm:py-28 pt-32 sm:pt-40">
     <div class="max-w-4xl mx-auto text-center px-4">
-      <h1 class="text-4xl sm:text-5xl font-extrabold mb-4 leading-tight">Mahmoud Shalabi</h1>
-      <p class="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto mb-8">Studying Computer Science at Carleton University, focused on Artificial Intellgence and Software Engineering.</p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="#projects" class="px-8 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition">See My Work</a>
-      </div>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 leading-tight text-gray-900">Mahmoud Shalabi</h1>
+      <p class="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto mb-8 leading-relaxed">
+        Studying Computer Science at Carleton University, focused on Artificial Intelligence and Software Engineering.
+      </p>
+      <a href="#projects" class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-full shadow-lg hover:from-blue-700 hover:to-blue-800 transition transform hover:scale-105">
+        Learn More
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </a>
     </div>
   </header>
 
-  <!-- ===== PROJECTS ===== -->
-  <section id="projects" class="max-w-7xl mx-auto px-4 py-20">
-    <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">Projects</h2>
-    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-
-      <!-- CourseScout -->
-      <a href="coursescout.html" class="block hover:ring-2 ring-blue-400 rounded-xl transition">
-        <article class="bg-white border border-gray-200 rounded-xl shadow-sm p-6 h-full">
-          <h3 class="text-xl font-semibold mb-2">CourseScout</h3>
-          <p class="text-gray-600 text-sm mb-4">AI-powered course insight platform for Carleton University students. Analyzes Reddit discussions to provide course difficulty ratings, professor insights, and student experiences using AI.</p>
-          <span class="text-blue-600 text-sm">View Details&nbsp;↗</span>
-        </article>
-      </a>
-
-      <!-- Animal Image Classifier -->
-      <a href="ai-classifier.html" class="block hover:ring-2 ring-blue-400 rounded-xl transition">
-        <article class="bg-white border border-gray-200 rounded-xl shadow-sm p-6 h-full">
-          <h3 class="text-xl font-semibold mb-2">AI Image Classifier</h3>
-          <p class="text-gray-600 text-sm mb-4">Custom TensorFlow/Keras CNN served with Flask that predicts if an image is a cat or dog.</p>
-          <span class="text-blue-600 text-sm">View Details&nbsp;↗</span>
-        </article>
-      </a>
-
-      <!-- Game Development Showcase -->
-      <a href="game-dev.html" class="block hover:ring-2 ring-blue-400 rounded-xl transition">
-        <article class="bg-white border border-gray-200 rounded-xl shadow-sm p-6 h-full">
-          <h3 class="text-xl font-semibold mb-2">Game Development&nbsp;Showcase</h3>
-          <p class="text-gray-600 text-sm">Prototypes and renders made with Unity, Unreal Engine, and Blender.</p>
-          <span class="text-blue-600 text-sm mt-4 inline-block">View Projects&nbsp;↗</span>
-        </article>
-      </a>
-
-      <!-- Student Grade Management System -->
-      <a href="student-grade.html" class="block hover:ring-2 ring-blue-400 rounded-xl transition">
-        <article class="bg-white border border-gray-200 rounded-xl shadow-sm p-6 h-full">
-          <h3 class="text-xl font-semibold mb-2">Student Grade Management System</h3>
-          <p class="text-gray-600 text-sm mb-4">Full‑stack web app that lets teachers securely record and manage student grades with CSV import using SQL.</p>
-          <span class="text-blue-600 text-sm">View Details&nbsp;↗</span>
-        </article>
-      </a>
-
-    </div>
-  </section>
-
-  <!-- ===== SKILLS ===== -->
-  <section id="skills" class="bg-white py-20">
+  <!-- Skills Section -->
+  <section id="skills" class="bg-gray-100 py-20">
     <div class="max-w-7xl mx-auto px-4">
-      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-10">Technical&nbsp;Skills</h2>
+      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-10 text-gray-900">Technical Skills</h2>
       <div class="flex flex-wrap justify-center gap-3 text-sm">
-        <span class="px-3 py-1 rounded-full bg-gray-100">Python</span>
-        <span class="px-3 py-1 rounded-full bg-gray-100">Java</span>
-        <span class="px-3 py-1 rounded-full bg-gray-100">C#</span>
-        <span class="px-3 py-1 rounded-full bg-gray-100">JavaScript</span>
-        <span class="px-3 py-1 rounded-full bg-gray-100">TypeScript</span>
-        <span class="px-3 py-1 rounded-full bg-gray-100">PHP</span>
-        <span class="px-3 py-1 rounded-full bg-gray-100">HTML & CSS</span>
-        <span class="px-3 py-1 rounded-full bg-gray-100">TailwindCSS</span>
-        <span class="px-3 py-1 rounded-full bg-gray-100">React</span>
-        <span class="px-3 py-1 rounded-full bg-gray-100">Next.js</span>
-        <span class="px-3 py-1 rounded-full bg-gray-100">Node.js</span>
-        <span class="px-3 py-1 rounded-full bg-gray-100">TensorFlow</span>
-        <span class="px-3 py-1 rounded-full bg-gray-100">Flask</span>
-        <span class="px-3 py-1 rounded-full bg-gray-100">MySQL</span>
-        <span class="px-3 py-1 rounded-full bg-gray-100">PostgreSQL</span>
-        <span class="px-3 py-1 rounded-full bg-gray-100">SQLite</span>
-        <span class="px-3 py-1 rounded-full bg-gray-100">Prisma&nbsp;ORM</span>
-        <span class="px-3 py-1 rounded-full bg-gray-100">OpenAI&nbsp;API</span>
-        <span class="px-3 py-1 rounded-full bg-gray-100">Reddit&nbsp;API</span>
-        <span class="px-3 py-1 rounded-full bg-gray-100">Linux</span>
-        <span class="px-3 py-1 rounded-full bg-gray-100">Git & GitHub</span>
-        <span class="px-3 py-1 rounded-full bg-gray-100">ESLint</span>
-        <span class="px-3 py-1 rounded-full bg-gray-100">Unity</span>
-        <span class="px-3 py-1 rounded-full bg-gray-100">Unreal&nbsp;Engine</span>
-        <span class="px-3 py-1 rounded-full bg-gray-100">Blender</span>
-        <span class="px-3 py-1 rounded-full bg-gray-100">Bootstrap</span>
+        <span class="px-3 py-1 rounded-full bg-white text-gray-800">Python</span>
+        <span class="px-3 py-1 rounded-full bg-white text-gray-800">Java</span>
+        <span class="px-3 py-1 rounded-full bg-white text-gray-800">C#</span>
+        <span class="px-3 py-1 rounded-full bg-white text-gray-800">JavaScript</span>
+        <span class="px-3 py-1 rounded-full bg-white text-gray-800">TypeScript</span>
+        <span class="px-3 py-1 rounded-full bg-white text-gray-800">PHP</span>
+        <span class="px-3 py-1 rounded-full bg-white text-gray-800">HTML & CSS</span>
+        <span class="px-3 py-1 rounded-full bg-white text-gray-800">TailwindCSS</span>
+        <span class="px-3 py-1 rounded-full bg-white text-gray-800">React</span>
+        <span class="px-3 py-1 rounded-full bg-white text-gray-800">Next.js</span>
+        <span class="px-3 py-1 rounded-full bg-white text-gray-800">Node.js</span>
+        <span class="px-3 py-1 rounded-full bg-white text-gray-800">TensorFlow</span>
+        <span class="px-3 py-1 rounded-full bg-white text-gray-800">Flask</span>
+        <span class="px-3 py-1 rounded-full bg-white text-gray-800">MySQL</span>
+        <span class="px-3 py-1 rounded-full bg-white text-gray-800">PostgreSQL</span>
+        <span class="px-3 py-1 rounded-full bg-white text-gray-800">SQLite</span>
+        <span class="px-3 py-1 rounded-full bg-white text-gray-800">Prisma ORM</span>
+        <span class="px-3 py-1 rounded-full bg-white text-gray-800">OpenAI API</span>
+        <span class="px-3 py-1 rounded-full bg-white text-gray-800">Reddit API</span>
+        <span class="px-3 py-1 rounded-full bg-white text-gray-800">Linux</span>
+        <span class="px-3 py-1 rounded-full bg-white text-gray-800">Git & GitHub</span>
+        <span class="px-3 py-1 rounded-full bg-white text-gray-800">ESLint</span>
+        <span class="px-3 py-1 rounded-full bg-white text-gray-800">Unity</span>
+        <span class="px-3 py-1 rounded-full bg-white text-gray-800">Unreal Engine</span>
+        <span class="px-3 py-1 rounded-full bg-white text-gray-800">Blender</span>
+        <span class="px-3 py-1 rounded-full bg-white text-gray-800">Bootstrap</span>
       </div>
     </div>
   </section>
 
-  <!-- ===== CONTACT ===== -->
-  <section id="contact" class="max-w-3xl mx-auto px-4 py-20 text-center">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-6">Get in Touch</h2>
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="mailto:mahmouds2006@gmail.com" class="px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition">Email&nbsp;Me</a>
-      <a href="https://www.linkedin.com/in/mahmoud-shalabi-07686433b/" target="_blank" class="px-6 py-3 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition flex items-center justify-center gap-2">
-        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-          <path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clip-rule="evenodd"></path>
-        </svg>
-        LinkedIn
-      </a>
+  <!-- Education Section -->
+  <section id="education" class="bg-white py-20">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-900">Education</h2>
+      
+      <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-200">
+        <div class="flex justify-between items-start mb-2">
+          <span class="text-purple-600 font-medium text-sm">2024 - 2028</span>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-2">Bachelor of Computer Science</h3>
+        <div class="flex justify-between items-center">
+          <p class="text-gray-700 font-medium">Carleton University - AI and ML Stream</p>
+          <p class="text-blue-600 text-sm italic">Ottawa, Canada</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <footer class="text-center text-gray-500 text-sm py-10">© 2025 Mahmoud&nbsp;Shalabi</footer>
+  <!-- Projects Section -->
+  <section id="projects" class="bg-gray-100 py-20">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-900">Projects</h2>
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <a href="coursescout.html" class="block hover:ring-2 ring-blue-400 rounded-xl transition transform hover:scale-105">
+          <article class="bg-white border border-gray-200 rounded-xl shadow-sm p-6 h-full">
+            <div class="h-48 rounded-lg mb-4 overflow-hidden">
+              <img src="coursescout-thumbnail.png" alt="CourseScout Landing Page" class="w-full h-full object-cover rounded-lg">
+            </div>
+            <h3 class="text-xl font-semibold mb-2 text-blue-600">CourseScout</h3>
+            <p class="text-gray-600 text-sm mb-4">AI-powered course insight platform for Carleton University students. Analyzes Reddit discussions to provide course difficulty ratings, professor insights, and student experiences using AI.</p>
+            <span class="text-blue-600 text-sm font-medium">View Details&nbsp;↗</span>
+          </article>
+        </a>
+
+        <a href="ai-classifier.html" class="block hover:ring-2 ring-blue-400 rounded-xl transition transform hover:scale-105">
+          <article class="bg-white border border-gray-200 rounded-xl shadow-sm p-6 h-full">
+            <div class="h-48 rounded-lg mb-4 overflow-hidden">
+              <img src="imageclassifier-thumbnail.png" alt="AI Image Classifier" class="w-full h-full object-cover rounded-lg">
+            </div>
+            <h3 class="text-xl font-semibold mb-2 text-blue-600">AI Image Classifier</h3>
+            <p class="text-gray-600 text-sm mb-4">Custom TensorFlow/Keras CNN served with Flask that predicts if an image is a cat or dog.</p>
+            <span class="text-blue-600 text-sm font-medium">View Details&nbsp;↗</span>
+          </article>
+        </a>
+
+        <a href="game-dev.html" class="block hover:ring-2 ring-blue-400 rounded-xl transition transform hover:scale-105">
+          <article class="bg-white border border-gray-200 rounded-xl shadow-sm p-6 h-full">
+            <div class="h-48 rounded-lg mb-4 overflow-hidden">
+              <img src="gamedev-thumbnail.png" alt="Game Development Showcase" class="w-full h-full object-cover rounded-lg">
+            </div>
+            <h3 class="text-xl font-semibold mb-2 text-blue-600">Game Development&nbsp;Showcase</h3>
+            <p class="text-gray-600 text-sm mb-4">Prototypes and renders made with Unity, Unreal Engine, and Blender.</p>
+            <span class="text-blue-600 text-sm font-medium mt-4 inline-block">View Projects&nbsp;↗</span>
+          </article>
+        </a>
+
+        <a href="student-grade.html" class="block hover:ring-2 ring-blue-400 rounded-xl transition transform hover:scale-105">
+          <article class="bg-white border border-gray-200 rounded-xl shadow-sm p-6 h-full">
+            <div class="h-48 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 rounded-lg mb-4 overflow-hidden relative">
+              <div class="absolute inset-0 bg-white/10 backdrop-blur-sm p-3">
+                <div class="bg-white/90 rounded-lg p-2 h-full flex flex-col">
+                  <div class="text-xs font-bold text-gray-800 mb-2 border-b border-gray-300 pb-1">Grade Management</div>
+                  <div class="flex-1 grid grid-cols-3 gap-1 text-[10px]">
+                    <div class="bg-blue-50 rounded p-1">
+                      <div class="text-gray-600 font-semibold">Student</div>
+                      <div class="text-gray-800 font-medium">John D.</div>
+                      <div class="text-green-600 font-bold mt-1">92%</div>
+                    </div>
+                    <div class="bg-purple-50 rounded p-1">
+                      <div class="text-gray-600 font-semibold">Student</div>
+                      <div class="text-gray-800 font-medium">Sarah M.</div>
+                      <div class="text-green-600 font-bold mt-1">88%</div>
+                    </div>
+                    <div class="bg-pink-50 rounded p-1">
+                      <div class="text-gray-600 font-semibold">Student</div>
+                      <div class="text-gray-800 font-medium">Alex K.</div>
+                      <div class="text-orange-600 font-bold mt-1">76%</div>
+                    </div>
+                  </div>
+                  <div class="mt-2 pt-2 border-t border-gray-300 text-[10px] text-gray-600 flex items-center justify-center gap-1">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                    </svg>
+                    CSV Import | SQL Database
+                  </div>
+                </div>
+              </div>
+            </div>
+            <h3 class="text-xl font-semibold mb-2 text-blue-600">Student Grade Management System</h3>
+            <p class="text-gray-600 text-sm mb-4">Full‑stack web app that lets teachers securely record and manage student grades with CSV import using SQL.</p>
+            <span class="text-blue-600 text-sm font-medium">View Details&nbsp;↗</span>
+          </article>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="bg-white py-20">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-12">
+        <div>
+          <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-gray-900">Get in Touch</h2>
+          <p class="text-gray-700 mb-8 leading-relaxed">
+            I'm always open to discuss new projects, creative ideas, or opportunities to be part of your visions.
+          </p>
+          
+          <div class="space-y-4 mb-8">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+              </div>
+              <div>
+                <p class="text-gray-600 text-sm">Email</p>
+                <a href="mailto:mahmouds2006@gmail.com" class="text-gray-900 font-medium">mahmouds2006@gmail.com</a>
+              </div>
+            </div>
+            
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+              </div>
+              <div>
+                <p class="text-gray-600 text-sm">Location</p>
+                <p class="text-gray-900 font-medium">Ottawa, Canada</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="https://drive.google.com/file/d/1uQi4HrlcyuIJGB7o1ekx72OnmSNitPnk/view?usp=sharing" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition">
+            View Resume
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"></path>
+            </svg>
+          </a>
+        </div>
+
+        <div>
+          <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-center md:text-left text-gray-900">Contact</h2>
+          <p class="text-gray-600 text-sm mb-6">Fill out the form below and it will open your email client with the message pre-filled.</p>
+          <form class="space-y-6" id="contactForm">
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Name</label>
+              <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 bg-white text-gray-900 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition">
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+              <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 bg-white text-gray-900 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition">
+            </div>
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+              <textarea id="message" name="message" rows="6" required class="w-full px-4 py-3 border border-gray-300 bg-white text-gray-900 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition resize-none"></textarea>
+            </div>
+            <button type="submit" class="w-full px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition flex items-center justify-center gap-2">
+              Send Message
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white py-10 border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <p class="text-gray-600">Copyright © 2025 - All right reserved by Mahmoud Shalabi</p>
+    </div>
+  </footer>
   
   <script>
-    // Initialize navbar when page loads
     document.addEventListener('DOMContentLoaded', function() {
-      // The navbar is already in the HTML, just initialize mobile menu functionality
-      const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-      const mobileMenu = document.getElementById('mobileMenu');
-      const hamburgerIcon = document.getElementById('hamburgerIcon');
-      const closeIcon = document.getElementById('closeIcon');
-      const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-      
-      if (mobileMenuToggle && mobileMenu) {
-        mobileMenuToggle.addEventListener('click', () => {
-          mobileMenu.classList.toggle('hidden');
-          hamburgerIcon.classList.toggle('hidden');
-          closeIcon.classList.toggle('hidden');
-        });
-        
-        // Close mobile menu when clicking on nav links
-        mobileNavLinks.forEach(link => {
-          link.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-            hamburgerIcon.classList.remove('hidden');
-            closeIcon.classList.add('hidden');
-          });
-        });
-      }
-      
-      // Loading animation for project cards
-      const projectCards = document.querySelectorAll('[href$=".html"]');
-      projectCards.forEach(card => {
-        card.addEventListener('click', (e) => {
-          // Add subtle loading effect
-          const originalText = card.querySelector('span').textContent;
-          const span = card.querySelector('span');
-          span.innerHTML = 'Loading... <div class="inline-block w-3 h-3 border border-blue-600 border-t-transparent rounded-full animate-spin ml-1"></div>';
-          
-          // Reset after a short delay (in case of back navigation)
-          setTimeout(() => {
-            if (span) span.textContent = originalText;
-          }, 2000);
-        });
-      });
-      
-      // Smooth scroll enhancement for better UX
+      loadNavbar(true);
+
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
           e.preventDefault();
@@ -228,6 +257,43 @@
               behavior: 'smooth',
               block: 'start'
             });
+            const mobileMenu = document.getElementById('mobileMenu');
+            const hamburgerIcon = document.getElementById('hamburgerIcon');
+            const closeIcon = document.getElementById('closeIcon');
+            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+              mobileMenu.classList.add('hidden');
+              hamburgerIcon.classList.remove('hidden');
+              closeIcon.classList.add('hidden');
+            }
+          }
+        });
+      });
+
+      const contactForm = document.getElementById('contactForm');
+      if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const name = document.getElementById('name').value;
+          const email = document.getElementById('email').value;
+          const message = document.getElementById('message').value;
+          
+          window.location.href = `mailto:mahmouds2006@gmail.com?subject=Contact from ${name}&body=${encodeURIComponent(message)}%0D%0A%0D%0AFrom: ${email}`;
+          
+          alert('Thank you for your message! Opening email client...');
+          contactForm.reset();
+        });
+      }
+
+      const projectCards = document.querySelectorAll('[href$=".html"]');
+      projectCards.forEach(card => {
+        card.addEventListener('click', (e) => {
+          const span = card.querySelector('span');
+          if (span) {
+            const originalText = span.textContent;
+            span.innerHTML = 'Loading... <div class="inline-block w-3 h-3 border border-blue-600 border-t-transparent rounded-full animate-spin ml-1"></div>';
+            setTimeout(() => {
+              if (span) span.textContent = originalText;
+            }, 2000);
           }
         });
       });

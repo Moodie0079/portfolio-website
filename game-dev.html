@@ -4,69 +4,75 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Game Development Showcase | Mahmoud Shalabi</title>
-  <!-- TailwindCSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Inter Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <!-- Navbar Script -->
   <script src="navbar.js"></script>
-  <style>body{font-family:'Inter',sans-serif}</style>
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+  </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
-  <!-- ===== NAVBAR ===== -->
+  
   <div id="navbar-container"></div>
 
-  <!-- ===== HERO ===== -->
-  <header class="bg-gradient-to-br from-blue-50 to-white py-16 text-center px-4">
+  <header class="bg-gradient-to-br from-blue-50 to-white py-16 pt-32 text-center px-4">
     <h1 class="text-4xl sm:text-5xl font-extrabold mb-4">Game Development Showcase</h1>
     <p class="text-lg text-gray-600 max-w-2xl mx-auto">Unity, Unreal, and Blender projects that taught me C#, level design, 3D modelling, version control and planning projects.</p>
   </header>
 
-  <!-- ===== PROJECT GRID ===== -->
   <section class="max-w-7xl mx-auto px-4 py-20">
     <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-      <!-- Rocket Game Prototype -->
-      <a href="https://youtube.com/shorts/K4djVGsF_J0?feature=share" target="_blank" class="block bg-white border border-gray-200 rounded-xl shadow-sm p-6 hover:ring-2 ring-blue-400 transition h-full">
-        <h3 class="text-xl font-semibold mb-2">Rocket Game Prototype (Unity)</h3>
-        <p class="text-gray-600 text-sm mb-4">Mobile game where you play as a flying a rocket dodging mines. The longer you survive the higher score you get. I added coins that you can collect to buy powerups which can destroy all mines on screen.</p>
-        <span class="text-blue-600 text-sm">Watch Video&nbsp;↗</span>
+      <a href="https://youtube.com/shorts/K4djVGsF_J0?feature=share" target="_blank" class="block hover:ring-2 ring-blue-400 rounded-xl transition transform hover:scale-105">
+        <article class="bg-white border border-gray-200 rounded-xl shadow-sm p-6 h-full">
+          <h3 class="text-xl font-semibold mb-2 text-blue-600">Rocket Game Prototype (Unity)</h3>
+          <p class="text-gray-600 text-sm mb-4">Mobile game where you play as a flying a rocket dodging mines. The longer you survive the higher score you get. I added coins that you can collect to buy powerups which can destroy all mines on screen.</p>
+          <span class="text-blue-600 text-sm font-medium">Watch Video&nbsp;↗</span>
+        </article>
       </a>
 
-      <!-- Grenade Crossing -->
-      <a href="https://www.youtube.com/watch?v=w95EPLBYgFM" target="_blank" class="block bg-white border border-gray-200 rounded-xl shadow-sm p-6 hover:ring-2 ring-blue-400 transition h-full">
-        <h3 class="text-xl font-semibold mb-2">Grenade&nbsp;Crossing (Unity)</h3>
-        <p class="text-gray-600 text-sm mb-4">A mobile game which is a twist on “Crossy Road,” where a grenade is crossing a road to dodge traffic in 3D environments. </p>
-        <span class="text-blue-600 text-sm">Watch Video&nbsp;↗</span>
+      <a href="https://www.youtube.com/watch?v=w95EPLBYgFM" target="_blank" class="block hover:ring-2 ring-blue-400 rounded-xl transition transform hover:scale-105">
+        <article class="bg-white border border-gray-200 rounded-xl shadow-sm p-6 h-full">
+          <h3 class="text-xl font-semibold mb-2 text-blue-600">Grenade Crossing (Unity)</h3>
+          <p class="text-gray-600 text-sm mb-4">A mobile game which is a twist on "Crossy Road," where a grenade is crossing a road to dodge traffic in 3D environments.</p>
+          <span class="text-blue-600 text-sm font-medium">Watch Video&nbsp;↗</span>
+        </article>
       </a>
 
-      <!-- Low-Poly FPS Prototype -->
-      <a href="https://www.youtube.com/watch?v=lhGZ_9ufiDI" target="_blank" class="block bg-white border border-gray-200 rounded-xl shadow-sm p-6 hover:ring-2 ring-blue-400 transition h-full">
-        <h3 class="text-xl font-semibold mb-2">Low‑Poly FPS Prototype (Unity)</h3>
-        <p class="text-gray-600 text-sm mb-4">Prototype FPS game where I worked on destruction, animation, movement, 3D physics and graphics.</p>
-        <span class="text-blue-600 text-sm">Watch Video&nbsp;↗</span>
+      <a href="https://www.youtube.com/watch?v=lhGZ_9ufiDI" target="_blank" class="block hover:ring-2 ring-blue-400 rounded-xl transition transform hover:scale-105">
+        <article class="bg-white border border-gray-200 rounded-xl shadow-sm p-6 h-full">
+          <h3 class="text-xl font-semibold mb-2 text-blue-600">Low-Poly FPS Prototype (Unity)</h3>
+          <p class="text-gray-600 text-sm mb-4">Prototype FPS game where I worked on destruction, animation, movement, 3D physics and graphics.</p>
+          <span class="text-blue-600 text-sm font-medium">Watch Video&nbsp;↗</span>
+        </article>
       </a>
 
-      <!-- Root Motion Character -->
-      <a href="https://www.youtube.com/watch?v=yYTFRs-SeQk" target="_blank" class="block bg-white border border-gray-200 rounded-xl shadow-sm p-6 hover:ring-2 ring-blue-400 transition h-full">
-        <h3 class="text-xl font-semibold mb-2">Root Motion Character (Unreal)</h3>
-        <p class="text-gray-600 text-sm mb-4">Prototype 3rd Person root motion character movement and animations.</p>
-        <span class="text-blue-600 text-sm">Watch Video&nbsp;↗</span>
+      <a href="https://www.youtube.com/watch?v=yYTFRs-SeQk" target="_blank" class="block hover:ring-2 ring-blue-400 rounded-xl transition transform hover:scale-105">
+        <article class="bg-white border border-gray-200 rounded-xl shadow-sm p-6 h-full">
+          <h3 class="text-xl font-semibold mb-2 text-blue-600">Root Motion Character (Unreal)</h3>
+          <p class="text-gray-600 text-sm mb-4">Prototype 3rd Person root motion character movement and animations.</p>
+          <span class="text-blue-600 text-sm font-medium">Watch Video&nbsp;↗</span>
+        </article>
       </a>
 
-      <!-- Bedroom Models Collection -->
-      <a href="https://www.youtube.com/watch?v=DQfJys6KgXk" target="_blank" class="block bg-white border border-gray-200 rounded-xl shadow-sm p-6 hover:ring-2 ring-blue-400 transition h-full">
-        <h3 class="text-xl font-semibold mb-2">Bedroom Models (Blender)</h3>
-        <p class="text-gray-600 text-sm mb-4">Blender modelling.</p>
-        <span class="text-blue-600 text-sm">Watch Video&nbsp;↗</span>
+      <a href="https://www.youtube.com/watch?v=DQfJys6KgXk" target="_blank" class="block hover:ring-2 ring-blue-400 rounded-xl transition transform hover:scale-105">
+        <article class="bg-white border border-gray-200 rounded-xl shadow-sm p-6 h-full">
+          <h3 class="text-xl font-semibold mb-2 text-blue-600">Bedroom Models (Blender)</h3>
+          <p class="text-gray-600 text-sm mb-4">Blender modelling.</p>
+          <span class="text-blue-600 text-sm font-medium">Watch Video&nbsp;↗</span>
+        </article>
       </a>
     </div>
   </section>
-  <footer class="text-center text-gray-500 text-sm py-10">© 2025 Mahmoud&nbsp;Shalabi</footer>
+
+  <footer class="bg-white py-10 border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <p class="text-gray-600">Copyright © 2025 - All right reserved by Mahmoud Shalabi</p>
+    </div>
+  </footer>
 
   <script>
-    // Initialize navbar when page loads
     document.addEventListener('DOMContentLoaded', function() {
-      loadNavbar(false); // false = not home page
+      loadNavbar(false);
     });
   </script>
 
