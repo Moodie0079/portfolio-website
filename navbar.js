@@ -1,16 +1,16 @@
 function createNavbar(isHomePage = false) {
   const navLinks = isHomePage ? 
-    `<li><a href="#skills" class="hover:text-blue-600 transition">Skills</a></li>
+    `<li><a href="#projects" class="hover:text-blue-600 transition">Projects</a></li>
      <li><a href="#education" class="hover:text-blue-600 transition">Education</a></li>
-     <li><a href="#projects" class="hover:text-blue-600 transition">Projects</a></li>
+     <li><a href="#skills" class="hover:text-blue-600 transition">Skills</a></li>
      <li><a href="#contact" class="hover:text-blue-600 transition">Contact</a></li>` :
-    `<li><a href="index.html#skills" class="hover:text-blue-600 transition">Skills</a></li>
+    `<li><a href="index.html#projects" class="hover:text-blue-600 transition">Projects</a></li>
      <li><a href="index.html#education" class="hover:text-blue-600 transition">Education</a></li>
-     <li><a href="index.html#projects" class="hover:text-blue-600 transition">Projects</a></li>
+     <li><a href="index.html#skills" class="hover:text-blue-600 transition">Skills</a></li>
      <li><a href="index.html#contact" class="hover:text-blue-600 transition">Contact</a></li>`;
 
   const backButton = isHomePage ? 
-    `<a href="#" class="text-xl sm:text-2xl font-bold text-gray-900 min-w-0">Mahmoud</a>` :
+    `<a href="#" id="scrollToTop" class="text-xl sm:text-2xl font-bold text-gray-900 min-w-0 hover:text-blue-600 transition cursor-pointer">Mahmoud</a>` :
     `<a href="index.html" class="text-gray-700 hover:text-blue-600 transition">← Back to Portfolio</a>`;
 
   const nameDisplay = isHomePage ? '' :
@@ -71,9 +71,9 @@ function createNavbar(isHomePage = false) {
       ${isHomePage ? `
       <div id="mobileMenu" class="lg:hidden hidden bg-white/80 backdrop-blur-md border-t border-gray-200">
         <div class="px-4 py-6 space-y-3">
-          <a href="#skills" class="block py-2 hover:text-blue-600 transition mobile-nav-link text-gray-700">Skills</a>
-          <a href="#education" class="block py-2 hover:text-blue-600 transition mobile-nav-link text-gray-700">Education</a>
           <a href="#projects" class="block py-2 hover:text-blue-600 transition mobile-nav-link text-gray-700">Projects</a>
+          <a href="#education" class="block py-2 hover:text-blue-600 transition mobile-nav-link text-gray-700">Education</a>
+          <a href="#skills" class="block py-2 hover:text-blue-600 transition mobile-nav-link text-gray-700">Skills</a>
           <a href="#contact" class="block py-2 hover:text-blue-600 transition mobile-nav-link text-gray-700">Contact</a>
           <div class="flex gap-4 pt-4 border-t border-gray-200">
             <a href="https://github.com/Moodie0079" target="_blank" class="p-2 rounded-lg hover:bg-gray-100 transition">
@@ -106,6 +106,103 @@ function loadNavbar(isHomePage = false) {
     
     if (isHomePage) {
       initializeMobileMenu();
+      
+      const scrollToTop = document.getElementById('scrollToTop');
+      if (scrollToTop) {
+        scrollToTop.addEventListener('click', function(e) {
+          e.preventDefault();
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      }
+    }
+    
+    const navbarEmailButton = document.getElementById('emailButtonDesktop');
+    if (navbarEmailButton) {
+      navbarEmailButton.addEventListener('click', function() {
+        const emailAddress = 'mahmouds2006@gmail.com';
+        navigator.clipboard.writeText(emailAddress).then(function() {
+          const originalIcon = navbarEmailButton.querySelector('svg');
+          if (originalIcon) {
+            const checkIcon = originalIcon.cloneNode(true);
+            checkIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>';
+            checkIcon.classList.remove('text-gray-700');
+            checkIcon.classList.add('text-green-600');
+            navbarEmailButton.replaceChild(checkIcon, originalIcon);
+            setTimeout(() => {
+              navbarEmailButton.replaceChild(originalIcon, checkIcon);
+            }, 2000);
+          }
+          if (typeof showCopyModal === 'function') {
+            showCopyModal();
+          } else {
+            setTimeout(() => {
+              const modal = document.getElementById('copyModal');
+              if (modal) {
+                modal.showModal();
+                setTimeout(() => modal.close(), 3000);
+              }
+            }, 100);
+          }
+        }).catch(function() {
+          if (typeof showCopyModal === 'function') {
+            showCopyModal();
+          } else {
+            setTimeout(() => {
+              const modal = document.getElementById('copyModal');
+              if (modal) {
+                modal.showModal();
+                setTimeout(() => modal.close(), 3000);
+              }
+            }, 100);
+          }
+        });
+      });
+    }
+
+    const mobileNavbarEmailButton = document.getElementById('emailButtonMobile');
+    if (mobileNavbarEmailButton) {
+      mobileNavbarEmailButton.addEventListener('click', function() {
+        const emailAddress = 'mahmouds2006@gmail.com';
+        navigator.clipboard.writeText(emailAddress).then(function() {
+          const originalIcon = mobileNavbarEmailButton.querySelector('svg');
+          if (originalIcon) {
+            const checkIcon = originalIcon.cloneNode(true);
+            checkIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>';
+            checkIcon.classList.remove('text-gray-700');
+            checkIcon.classList.add('text-green-600');
+            mobileNavbarEmailButton.replaceChild(checkIcon, originalIcon);
+            setTimeout(() => {
+              mobileNavbarEmailButton.replaceChild(originalIcon, checkIcon);
+            }, 2000);
+          }
+          if (typeof showCopyModal === 'function') {
+            showCopyModal();
+          } else {
+            setTimeout(() => {
+              const modal = document.getElementById('copyModal');
+              if (modal) {
+                modal.showModal();
+                setTimeout(() => modal.close(), 3000);
+              }
+            }, 100);
+          }
+        }).catch(function() {
+          if (typeof showCopyModal === 'function') {
+            showCopyModal();
+          } else {
+            setTimeout(() => {
+              const modal = document.getElementById('copyModal');
+              if (modal) {
+                modal.showModal();
+                setTimeout(() => modal.close(), 3000);
+              }
+            }, 100);
+          }
+        });
+      });
     }
   }
 }
