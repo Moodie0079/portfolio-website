@@ -14,6 +14,52 @@
   <script src="navbar.js"></script>
   <style>
     body { font-family: 'Inter', sans-serif; }
+    .video-container {
+      position: relative;
+      cursor: pointer;
+    }
+    .play-button-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.3);
+      transition: background 0.3s ease;
+      border-radius: 0.75rem;
+    }
+    .video-container:hover .play-button-overlay {
+      background: rgba(0, 0, 0, 0.4);
+    }
+    .play-button-overlay.hidden {
+      display: none;
+    }
+    .play-button {
+      width: 80px;
+      height: 80px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s ease, background 0.2s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .video-container:hover .play-button {
+      transform: scale(1.1);
+      background: rgba(255, 255, 255, 1);
+    }
+    .play-icon {
+      width: 0;
+      height: 0;
+      border-left: 25px solid #3b82f6;
+      border-top: 15px solid transparent;
+      border-bottom: 15px solid transparent;
+      margin-left: 5px;
+    }
   </style>
 </head>
 <body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-200">
@@ -28,9 +74,6 @@
         </svg>
         Back to Projects
       </a>
-      <div class="mb-8">
-        <img src="cryptotrader.png" alt="Crypto Paper Trader" class="w-full rounded-xl shadow-2xl mb-6">
-      </div>
       <div class="text-center">
         <h1 class="text-4xl sm:text-5xl font-extrabold mb-4 text-gray-900 dark:text-white">Crypto Paper Trader</h1>
         <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
@@ -49,6 +92,20 @@
   </header>
 
   <section class="max-w-5xl mx-auto px-4 py-8 sm:py-16">
+    <div class="mb-12">
+      <div class="video-container" id="videoContainer">
+        <video id="projectVideo" class="w-full rounded-xl shadow-2xl" poster="cryptotrader.png">
+          <source src="Paper Trader Showcase.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="play-button-overlay" id="playOverlay">
+          <div class="play-button">
+            <div class="play-icon"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <h2 class="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">Project Overview</h2>
     <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
       This is a paper trading app built with Ruby on Rails and React where you can practice trading Bitcoin, Ethereum, and Solana with real market prices. It connects to Binance's live price feed and updates your portfolio value in real-time as prices change.
@@ -124,6 +181,25 @@
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       loadNavbar(false);
+      
+      const videoContainer = document.getElementById('videoContainer');
+      const video = document.getElementById('projectVideo');
+      const playOverlay = document.getElementById('playOverlay');
+      
+      videoContainer.addEventListener('click', function() {
+        if (video.paused) {
+          video.controls = true;
+          video.play();
+          playOverlay.classList.add('hidden');
+        }
+      });
+      
+      video.addEventListener('pause', function() {
+        if (video.currentTime === 0 || video.ended) {
+          playOverlay.classList.remove('hidden');
+          video.controls = false;
+        }
+      });
     });
   </script>
 
