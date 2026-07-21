@@ -57,7 +57,7 @@
   <section class="max-w-5xl mx-auto px-4 py-8 sm:py-16">
     <h2 class="text-2xl font-semibold mb-6 text-white">Project Overview</h2>
     <p class="text-neutral-400 leading-relaxed mb-8">
-      A complete chess engine written from scratch in C, with no chess library doing the thinking. It takes any chess position, works out the best move it can find, and plays it. The board you interact with is a Next.js frontend, but the part that actually plays chess is roughly 1,000 lines of C: bitboard board representation, full legal move generation, a position evaluator, and a negamax search with alpha&#8209;beta pruning.
+      A complete chess engine written from scratch in C, with no chess library doing the thinking. It takes any chess position, works out the best move it can find, and plays it.
     </p>
 
     <h3 class="text-xl font-semibold mb-4 text-white">How It Works</h3>
@@ -65,16 +65,7 @@
       The engine is completely stateless. It stores nothing between moves. Every turn, the browser sends the full position as a FEN string to a Next.js API route, which spawns the compiled C binary as a subprocess, passes it the position and a search depth, and reads back a single UCI move from stdout. One position in, one move out, with no game stored on the server.
     </p>
 
-    <div class="mb-8">
-      <p class="text-neutral-400 font-semibold mb-2">Difficulty:</p>
-      <ul class="text-neutral-400 leading-relaxed ml-4 space-y-1">
-        <li><strong>Six levels</strong>, each named after a piece, mapping to how many moves deep the search looks (depth 2&ndash;7)</li>
-        <li><strong>Depth 2:</strong> instant, plays on instinct</li>
-        <li><strong>Depth 7:</strong> takes a few seconds per move and is genuinely hard to beat</li>
-      </ul>
-    </div>
-
-    <h3 class="text-xl font-semibold mb-6 text-white">How I Built It</h3>
+    <h3 class="text-xl font-semibold mb-6 mt-12 text-white">How I Built It</h3>
     <p class="text-neutral-400 leading-relaxed mb-8">
       The engine was built in order, each piece depending on the one before it. Here is the path from an empty file to something that plays a real game of chess.
     </p>
@@ -230,7 +221,7 @@
 
   <footer class="py-10 border-t border-white/5">
     <div class="max-w-7xl mx-auto px-4 text-center">
-      <p class="text-neutral-400">Copyright © 2025 - All right reserved by Mahmoud Shalabi</p>
+      <p class="text-neutral-400">Copyright © <span class="year">2026</span> - All right reserved by Mahmoud Shalabi</p>
     </div>
   </footer>
 

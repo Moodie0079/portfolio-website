@@ -72,6 +72,7 @@ function loadNavbar(isHomePage = false) {
   initNavScrollState();
   initReveal();
   initHeroSpotlight();
+  initFooterYear();
   if (isHomePage) {
     initScrollSpy();
     initSmoothScroll();
@@ -209,6 +210,13 @@ function initReveal() {
   );
 
   items.forEach(el => observer.observe(el));
+}
+
+/* Keeps the footer year current without anyone having to remember. The
+   markup carries a real year too, so it reads correctly with JS disabled. */
+function initFooterYear() {
+  const year = String(new Date().getFullYear());
+  document.querySelectorAll('.year').forEach(el => { el.textContent = year; });
 }
 
 /* Feeds the cursor position to the hero so the dot grid brightens under it.
