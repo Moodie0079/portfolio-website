@@ -24,7 +24,7 @@ function createNavbar(isHomePage = false) {
     .join('');
 
   const mobileLinks = NAV_SECTIONS
-    .map(s => `<a href="${href(s.id)}" class="mobile-nav-link block py-2 text-neutral-400 hover:text-[#C9A24D] transition">${s.label}</a>`)
+    .map(s => `<a href="${href(s.id)}" class="mobile-nav-link block py-3 text-neutral-400 hover:text-[#C9A24D] transition">${s.label}</a>`)
     .join('');
 
   return `

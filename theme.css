@@ -242,6 +242,13 @@ section[id] { scroll-margin-top: 80px; }
 }
 .nav-icon:hover { color: var(--gold); background: rgba(255,255,255,.04); }
 
+/* Below the desktop breakpoint everything is touched rather than clicked,
+   so grow the icon buttons to a 44px target. */
+@media (max-width: 1023px) {
+  .nav-icon { padding: .75rem; }
+  .social-btn { width: 3rem; height: 3rem; }
+}
+
 /* ---------- Scroll reveal ---------- */
 
 /* Only hide things when JS is available to bring them back. Without the
