@@ -10,19 +10,17 @@
       darkMode: 'class',
     }
   </script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="theme.css" />
   <script src="navbar.js"></script>
-  <style>
-    body { font-family: 'Inter', sans-serif; }
-  </style>
 </head>
-<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-200">
+<body>
   
   <div id="navbar-container"></div>
 
-  <header class="bg-gradient-to-br from-blue-50 to-white dark:from-gray-800 dark:to-gray-900 py-16 pt-32 transition-colors duration-200">
+  <header class="page-head">
     <div class="max-w-4xl mx-auto px-4">
-      <a href="index.html#projects" class="inline-flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition mb-6">
+      <a href="index.html#projects" class="inline-flex items-center gap-2 text-neutral-400 hover:text-[#C9A24D] transition mb-6">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
         </svg>
@@ -32,18 +30,18 @@
         <img src="coursescout-thumbnail.png" alt="CourseScout Landing Page" class="w-full rounded-xl shadow-2xl mb-6">
       </div>
       <div class="text-center">
-        <h1 class="text-4xl sm:text-5xl font-extrabold mb-4 text-gray-900 dark:text-white">CourseScout</h1>
-        <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
+        <h1 class="text-4xl sm:text-5xl font-extrabold mb-4 text-white">CourseScout</h1>
+        <p class="text-lg sm:text-xl text-neutral-400 max-w-3xl mx-auto mb-8">
           AI-powered course insight platform that helps university students make informed decisions about their course selections through Reddit analysis and AI insights. Currently focused on Carleton University with plans to expand to other schools.
         </p>
         <div class="flex flex-wrap gap-4 justify-center">
-          <a href="https://coursescout.ca" target="_blank" class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-full shadow-lg hover:from-blue-700 hover:to-blue-800 transition font-semibold">
+          <a href="https://coursescout.ca" target="_blank" class="btn-gold">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
             </svg>
             Try CourseScout Live
           </a>
-          <a href="https://github.com/Moodie0079/coursescout" target="_blank" class="inline-flex items-center gap-2 px-8 py-4 bg-gray-800 dark:bg-gray-700 text-white rounded-full shadow-lg hover:bg-gray-900 dark:hover:bg-gray-600 transition font-semibold">
+          <a href="https://github.com/Moodie0079/coursescout" target="_blank" class="btn-ghost">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
               <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
             </svg>
@@ -55,29 +53,29 @@
   </header>
 
   <section class="max-w-5xl mx-auto px-4 py-8 sm:py-16">
-    <h2 class="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">Project Overview</h2>
-    <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
+    <h2 class="text-2xl font-semibold mb-6 text-white">Project Overview</h2>
+    <p class="text-neutral-400 leading-relaxed mb-8">
       CourseScout is a course insight platform that helps university students make more informed decisions about their course selections. The platform analyzes years of student conversations from the school's reddit and stores information in a database.
     </p>
 
-    <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white">How It Works</h3>
-    <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+    <h3 class="text-xl font-semibold mb-4 text-white">How It Works</h3>
+    <p class="text-neutral-400 leading-relaxed mb-4">
       Students type in a course code and the system queries the PostgreSQL database to retrieve Reddit data. The system searches through a database of pre-crawled Reddit discussions from the university's subreddit. The system retrieves relevant discussions from the database, sends them to AI for analysis, and displays information including difficulty ratings, workload assessments, professor insights, pros and cons, and student quotes with citations.
     </p>
 
     <div class="mb-8">
-      <p class="text-gray-700 dark:text-gray-300 font-semibold mb-2">Performance:</p>
-      <ul class="text-gray-700 dark:text-gray-300 leading-relaxed ml-4 space-y-1">
+      <p class="text-neutral-400 font-semibold mb-2">Performance:</p>
+      <ul class="text-neutral-400 leading-relaxed ml-4 space-y-1">
         <li><strong>First search:</strong> 10-20 seconds (full AI analysis)</li>
         <li><strong>Repeat searches:</strong> &lt;100ms (served from cache)</li>
       </ul>
     </div>
 
-    <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white">System Architecture</h3>
+    <h3 class="text-xl font-semibold mb-4 text-white">System Architecture</h3>
     
     <div class="mb-6">
-      <p class="text-gray-700 dark:text-gray-300 font-semibold mb-2">Frontend:</p>
-      <ul class="text-gray-700 dark:text-gray-300 leading-relaxed ml-4 space-y-1 list-disc list-inside">
+      <p class="text-neutral-400 font-semibold mb-2">Frontend:</p>
+      <ul class="text-neutral-400 leading-relaxed ml-4 space-y-1 list-disc list-inside">
         <li>Student enters course code</li>
         <li>React validates format with input validation and SQL injection prevention</li>
         <li>Makes API request to backend</li>
@@ -86,106 +84,106 @@
     </div>
 
     <div class="mb-6">
-      <p class="text-gray-700 dark:text-gray-300 font-semibold mb-2">Backend API & Database Operations:</p>
-      <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-2 ml-4">
+      <p class="text-neutral-400 font-semibold mb-2">Backend API & Database Operations:</p>
+      <p class="text-neutral-400 leading-relaxed mb-2 ml-4">
         <strong>Database Query:</strong> Receives course code, queries PostgreSQL database using Prisma ORM with GIN-indexed arrays for fast course code lookups, retrieves stored Reddit posts and comments.
       </p>
-      <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-2 ml-4">
+      <p class="text-neutral-400 leading-relaxed mb-2 ml-4">
         <strong>AI Analysis:</strong> Processes up to 1,000 discussions per course query with strict content filtering. Sends to OpenAI GPT-4o-mini and receives structured analysis with difficulty ratings, workload scores, pros/cons, and student quotes.
       </p>
-      <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-2 ml-4">
+      <p class="text-neutral-400 leading-relaxed mb-2 ml-4">
         <strong>Professor Data:</strong> Extracts professor names from Reddit discussions, fetches ratings from RateMyProfessors API, caches in database for 30 days so information doesn't get outdated, then displays with course insights.
       </p>
-      <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4 ml-4">
+      <p class="text-neutral-400 leading-relaxed mb-4 ml-4">
         <strong>Caching:</strong> Stores complete AI analysis results in database as JSON, enabling instant repeat queries and reducing OpenAI costs.
       </p>
     </div>
 
     <div class="mb-8">
-      <p class="text-gray-700 dark:text-gray-300 font-semibold mb-2">Data Collection & Crawling System:</p>
-      <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4 ml-4">
+      <p class="text-neutral-400 font-semibold mb-2">Data Collection & Crawling System:</p>
+      <p class="text-neutral-400 leading-relaxed mb-4 ml-4">
         The crawling process runs periodically to populate the database:
       </p>
-      <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-2 ml-4">
+      <p class="text-neutral-400 leading-relaxed mb-2 ml-4">
         <strong>Course Discovery:</strong> Loads course codes from University's official course catalog (4,000+ courses).
       </p>
-      <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-2 ml-4">
+      <p class="text-neutral-400 leading-relaxed mb-2 ml-4">
         <strong>Reddit Crawling:</strong> Searches school's reddit for each course code with multiple format variations (e.g., "COMP 1005", "COMP1005"), fetches complete comment trees, respects Reddit API rate limits with exponential backoff, includes duplicate detection and automatic resume capability.
       </p>
-      <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-2 ml-4">
+      <p class="text-neutral-400 leading-relaxed mb-2 ml-4">
         <strong>Course Code Extraction:</strong> Analyzes all posts and comments to extract mentioned course codes, stores as arrays in PostgreSQL with GIN indexing for fast searches, enables cross-course discovery.
       </p>
-      <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4 ml-4">
+      <p class="text-neutral-400 leading-relaxed mb-4 ml-4">
         <strong>Database Storage:</strong> Stores all collected data in structured PostgreSQL tables with relationships between courses, posts, and comments.
       </p>
     </div>
 
-    <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Challenges & Solutions</h3>
+    <h3 class="text-xl font-semibold mb-4 text-white">Challenges & Solutions</h3>
     
     <div class="mb-6">
-      <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-2"><strong>Initial Live API Approach:</strong></p>
-      <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-2 ml-4">
+      <p class="text-neutral-400 leading-relaxed mb-2"><strong>Initial Live API Approach:</strong></p>
+      <p class="text-neutral-400 leading-relaxed mb-2 ml-4">
         <strong>Problem:</strong> Initial version made live Reddit API calls for each course request which took several minutes per course and hit rate limits, making the system slow and inefficient.
       </p>
-      <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4 ml-4">
+      <p class="text-neutral-400 leading-relaxed mb-4 ml-4">
         <strong>Solution:</strong> Completely redesigned to use a database-driven architecture where data is pre-crawled and stored, reducing response times from minutes to seconds for first-time queries and milliseconds for cached queries.
       </p>
     </div>
 
     <div class="mb-6">
-      <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-2"><strong>Rate Limiting During Database Crawling:</strong></p>
-      <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-2 ml-4">
+      <p class="text-neutral-400 leading-relaxed mb-2"><strong>Rate Limiting During Database Crawling:</strong></p>
+      <p class="text-neutral-400 leading-relaxed mb-2 ml-4">
         <strong>Problem:</strong> Reddit API rate limits during the bulk crawling process for populating the database caused failures and slow data collection.
       </p>
-      <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4 ml-4">
+      <p class="text-neutral-400 leading-relaxed mb-4 ml-4">
         <strong>Solution:</strong> Implemented rate limiting with header tracking, added retry logic with exponential backoff, built progress tracking to resume interrupted crawling jobs, and added error handling for API failures.
       </p>
     </div>
 
     <div class="mb-8">
-      <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-2"><strong>Performance Optimization:</strong></p>
-      <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-2 ml-4">
+      <p class="text-neutral-400 leading-relaxed mb-2"><strong>Performance Optimization:</strong></p>
+      <p class="text-neutral-400 leading-relaxed mb-2 ml-4">
         <strong>Problem:</strong> Searching for courses mentioned across thousands of posts was slow with standard database queries.
       </p>
-      <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4 ml-4">
+      <p class="text-neutral-400 leading-relaxed mb-4 ml-4">
         <strong>Solution:</strong> Implemented PostgreSQL GIN (Generalized Inverted Index) indexing on course code arrays, enabling fast array containment searches and reducing query times to under 500ms.
       </p>
     </div>
 
-    <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Technology Stack</h3>
+    <h3 class="text-xl font-semibold mb-4 text-white">Technology Stack</h3>
     
     <div class="mb-6">
-      <p class="text-gray-700 dark:text-gray-300 font-semibold mb-2">Frontend:</p>
+      <p class="text-neutral-400 font-semibold mb-2">Frontend:</p>
       <div class="flex flex-wrap gap-2 mb-4">
-        <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-sm">Next.js</span>
-        <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-sm">React</span>
-        <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-sm">TypeScript</span>
-        <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-sm">Tailwind CSS</span>
+        <span class="tag">Next.js</span>
+        <span class="tag">React</span>
+        <span class="tag">TypeScript</span>
+        <span class="tag">Tailwind CSS</span>
       </div>
     </div>
 
     <div class="mb-6">
-      <p class="text-gray-700 dark:text-gray-300 font-semibold mb-2">Backend:</p>
+      <p class="text-neutral-400 font-semibold mb-2">Backend:</p>
       <div class="flex flex-wrap gap-2 mb-4">
-        <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-sm">Next.js</span>
-        <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-sm">Prisma ORM</span>
-        <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-sm">PostgreSQL</span>
+        <span class="tag">Next.js</span>
+        <span class="tag">Prisma ORM</span>
+        <span class="tag">PostgreSQL</span>
       </div>
     </div>
 
     <div class="mb-8">
-      <p class="text-gray-700 dark:text-gray-300 font-semibold mb-2">APIs & Integrations:</p>
+      <p class="text-neutral-400 font-semibold mb-2">APIs & Integrations:</p>
       <div class="flex flex-wrap gap-2 mb-4">
-        <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-sm">OpenAI API (GPT-4o-mini)</span>
-        <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-sm">Reddit API</span>
-        <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-sm">RateMyProfessors API</span>
+        <span class="tag">OpenAI API (GPT-4o-mini)</span>
+        <span class="tag">Reddit API</span>
+        <span class="tag">RateMyProfessors API</span>
       </div>
     </div>
   </section>
 
-  <footer class="bg-white dark:bg-gray-800 py-10 border-t border-gray-200 dark:border-gray-700 transition-colors duration-200">
+  <footer class="py-10 border-t border-white/5">
     <div class="max-w-7xl mx-auto px-4 text-center">
-      <p class="text-gray-600 dark:text-gray-400">Copyright © 2025 - All right reserved by Mahmoud Shalabi</p>
+      <p class="text-neutral-400">Copyright © 2025 - All right reserved by Mahmoud Shalabi</p>
     </div>
   </footer>
 

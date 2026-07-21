@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chess Engine | Mahmoud Shalabi</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="theme.css" />
+  <script src="navbar.js"></script>
+</head>
+<body>
+
+  <div id="navbar-container"></div>
+
+  <header class="page-head">
+    <div class="max-w-4xl mx-auto px-4">
+      <a href="index.html#projects" class="inline-flex items-center gap-2 text-neutral-400 hover:text-[#C9A24D] transition mb-6">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+        </svg>
+        Back to Projects
+      </a>
+      <div class="mb-8">
+        <img src="chess-app.png" alt="Chess Engine interface" class="w-full rounded-xl shadow-2xl mb-6">
+      </div>
+      <div class="text-center">
+        <h1 class="text-4xl sm:text-5xl font-extrabold mb-4 text-white">Chess Engine</h1>
+        <p class="text-lg sm:text-xl text-neutral-400 max-w-3xl mx-auto mb-8">
+          A chess engine I built from scratch in C. It's the computer you play against, the part of a chess program that reads the position, works out the best move it can find, and plays it.
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <!-- TODO: once the engine is deployed, replace this <span> with:
+               <a href="YOUR_URL_HERE" target="_blank" class="btn-gold"> ... Play the Engine Live</a> -->
+          <span class="btn-disabled" aria-disabled="true">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            Live Demo Coming Soon
+          </span>
+          <a href="https://github.com/Moodie0079/chess-engine" target="_blank" class="btn-ghost">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+            </svg>
+            View on GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="max-w-5xl mx-auto px-4 py-8 sm:py-16">
+    <h2 class="text-2xl font-semibold mb-6 text-white">Project Overview</h2>
+    <p class="text-neutral-400 leading-relaxed mb-8">
+      A complete chess engine written from scratch in C, with no chess library doing the thinking. It takes any chess position, works out the best move it can find, and plays it. The board you interact with is a Next.js frontend, but the part that actually plays chess is roughly 1,000 lines of C: bitboard board representation, full legal move generation, a position evaluator, and a negamax search with alpha&#8209;beta pruning.
+    </p>
+
+    <h3 class="text-xl font-semibold mb-4 text-white">How It Works</h3>
+    <p class="text-neutral-400 leading-relaxed mb-4">
+      The engine is completely stateless. It stores nothing between moves. Every turn, the browser sends the full position as a FEN string to a Next.js API route, which spawns the compiled C binary as a subprocess, passes it the position and a search depth, and reads back a single UCI move from stdout. One position in, one move out, with no game stored on the server.
+    </p>
+
+    <div class="mb-8">
+      <p class="text-neutral-400 font-semibold mb-2">Difficulty:</p>
+      <ul class="text-neutral-400 leading-relaxed ml-4 space-y-1">
+        <li><strong>Six levels</strong>, each named after a piece, mapping to how many moves deep the search looks (depth 2&ndash;7)</li>
+        <li><strong>Depth 2:</strong> instant, plays on instinct</li>
+        <li><strong>Depth 7:</strong> takes a few seconds per move and is genuinely hard to beat</li>
+      </ul>
+    </div>
+
+    <h3 class="text-xl font-semibold mb-6 text-white">How I Built It</h3>
+    <p class="text-neutral-400 leading-relaxed mb-8">
+      The engine was built in order, each piece depending on the one before it. Here is the path from an empty file to something that plays a real game of chess.
+    </p>
+
+    <div class="relative mb-12">
+      <div class="absolute left-4 top-2 bottom-2 w-px bg-white/10"></div>
+      <div class="flex flex-col gap-10">
+
+        <div class="relative pl-12">
+          <div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-[#C9A24D]/10 text-[#C9A24D] border border-[#C9A24D]/35 grid place-items-center text-xs font-bold">1</div>
+          <p class="text-[11px] uppercase tracking-[0.2em] text-neutral-500 mb-1">Where I started</p>
+          <h4 class="text-xl font-semibold mb-3 text-white">Deciding what the project actually is</h4>
+          <p class="text-neutral-400 leading-relaxed mb-3">My goal in this project was to make the engine, the part that takes a chess position and figures out the best move. So I made a call early on that the frontend is not the project. The board, the dragging, the visuals, that all leans on existing libraries (chess.js and react-chessboard) on purpose. I didn't want to rebuild that. I wanted to spend my time on the part that actually thinks and finds the best move.</p>
+          <p class="text-neutral-400 leading-relaxed mb-3">The other early decision was to keep the engine completely stateless. It remembers nothing between moves. Every turn, the browser hands it the full position as a FEN string, it works out one move, prints it, and exits. One position in, one move out, with no game stored on the server.</p>
+          <p class="text-neutral-400 leading-relaxed">I started by researching bitboards in depth, since they formed the foundation of every chess engine. A bitboard represents the 64 squares of a chessboard using a 64-bit integer, where each bit corresponds to a specific square. By setting, clearing, and checking individual bits, I could efficiently track the locations of pieces and perform operations such as generating moves, detecting attacks, and updating positions. I studied bitwise operators, masking, shifts, and piece-specific bitboards to understand how chess engines process board information quickly. I researched the other major components of a chess engine like move generation, position evaluation, search algorithms, etc.</p>
+        </div>
+
+        <div class="relative pl-12">
+          <div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-[#C9A24D]/10 text-[#C9A24D] border border-[#C9A24D]/35 grid place-items-center text-xs font-bold">2</div>
+          <p class="text-[11px] uppercase tracking-[0.2em] text-neutral-500 mb-1">Before building</p>
+          <h4 class="text-xl font-semibold mb-3 text-white">Building the toolbox first (defs.h)</h4>
+          <p class="text-neutral-400 leading-relaxed mb-3">Before coding anything I set up a header, <code class="code-chip">defs.h</code>, with all the little stuff I'd lean on for the rest of the project. Since the board was going to be bitboards I needed clean ways to poke at individual bits.</p>
+          <p class="text-neutral-400 leading-relaxed">So I wrote a handful of macros that show up basically everywhere after this: <code class="code-chip">set_bit</code> to drop a piece on a square, <code class="code-chip">get_bit</code> to check one, <code class="code-chip">pop_bit</code> to clear one. I continued to add to this as I developed, such as <code class="code-chip">count_bits</code> and a lowest-set-bit finder, which are really just CPU instructions (popcount and count-trailing-zeros). They are helpers, but the entire engine is built on top of them.</p>
+        </div>
+
+        <div class="relative pl-12">
+          <div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-[#C9A24D]/10 text-[#C9A24D] border border-[#C9A24D]/35 grid place-items-center text-xs font-bold">3</div>
+          <p class="text-[11px] uppercase tracking-[0.2em] text-neutral-500 mb-1">First thing I actually built</p>
+          <h4 class="text-xl font-semibold mb-3 text-white">Reading a position out of text (FEN)</h4>
+          <p class="text-neutral-400 leading-relaxed mb-3">First real thing I coded was the parser. A FEN string is just the whole position written as text: where every piece is, whose turn it is, castling rights, en passant, the move counters. I learned the format, then walked it character by character: letters drop a piece onto its bitboard, digits skip that many empty squares, slashes move down to the next rank.</p>
+          <p class="text-neutral-400 leading-relaxed">Once the pieces were placed I rebuilt the 'occupancy' bitboards: all the white pieces, all the black, and everything combined. I needed them because almost every step after this asks some version of 'is this square occupied?'.</p>
+        </div>
+
+        <div class="relative pl-12">
+          <div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-[#C9A24D]/10 text-[#C9A24D] border border-[#C9A24D]/35 grid place-items-center text-xs font-bold">4</div>
+          <p class="text-[11px] uppercase tracking-[0.2em] text-neutral-500 mb-1">Then: how pieces move, part 1</p>
+          <h4 class="text-xl font-semibold mb-3 text-white">The jumpers: knights, kings, pawns</h4>
+          <p class="text-neutral-400 leading-relaxed mb-3">Next I taught pieces how they move, and I started with the easy ones: the pieces that jump to a fixed set of squares no matter what's around them. A knight always hits the same L-shaped squares relative to where it stands, a king the squares right next to it, pawns their two capture diagonals.</p>
+          <p class="text-neutral-400 leading-relaxed">Since those patterns never change, I just precomputed them once when the program starts, into a lookup table with one entry per square. The only annoying part was the edges. A knight on the a-file shouldn't 'wrap around' to the h-file, so I masked those off. After that, asking where a knight can go is a single table lookup.</p>
+        </div>
+
+        <div class="relative pl-12">
+          <div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-[#C9A24D]/10 text-[#C9A24D] border border-[#C9A24D]/35 grid place-items-center text-xs font-bold">5</div>
+          <p class="text-[11px] uppercase tracking-[0.2em] text-neutral-500 mb-1">How pieces move, part 2</p>
+          <h4 class="text-xl font-semibold mb-3 text-white">The sliders: bishops, rooks, queens</h4>
+          <p class="text-neutral-400 leading-relaxed mb-3">Then the harder ones: the pieces that slide. A rook keeps going until something stops it, so you can't precompute it the same way, since it depends on what's in the way. So for these I cast a ray out from the square in each direction, one square at a time, and stop as soon as I hit a piece (including that blocker itself, since you're allowed to capture it).</p>
+          <p class="text-neutral-400 leading-relaxed">Bishops walk the diagonals, rooks the straight lines, and a queen turned out to be the easiest of all, since it's literally just the rook rays and the bishop rays OR'd together.</p>
+        </div>
+
+        <div class="relative pl-12">
+          <div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-[#C9A24D]/10 text-[#C9A24D] border border-[#C9A24D]/35 grid place-items-center text-xs font-bold">6</div>
+          <p class="text-[11px] uppercase tracking-[0.2em] text-neutral-500 mb-1">Detecting check</p>
+          <h4 class="text-xl font-semibold mb-3 text-white">&ldquo;Is this square under attack?&rdquo;</h4>
+          <p class="text-neutral-400 leading-relaxed mb-3">Around here I needed a reliable way to ask whether a given square is being attacked, both for spotting check and for making sure a king doesn't castle through a square that's under fire. Looping over every enemy piece would've been slow.</p>
+          <p class="text-neutral-400 leading-relaxed">So I used a trick that's kind of backwards: I pretend a piece of each type is standing on the square I'm asking about, generate its attacks, and check if any land on a real enemy piece of that same type. If a 'knight' placed there hits an actual enemy knight, then yeah, that square is attacked by a knight. Same logic for every piece, all in one function.</p>
+        </div>
+
+        <div class="relative pl-12">
+          <div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-[#C9A24D]/10 text-[#C9A24D] border border-[#C9A24D]/35 grid place-items-center text-xs font-bold">7</div>
+          <p class="text-[11px] uppercase tracking-[0.2em] text-neutral-500 mb-1">Putting it together</p>
+          <h4 class="text-xl font-semibold mb-3 text-white">Generating every move (including the weird ones)</h4>
+          <p class="text-neutral-400 leading-relaxed mb-3">With movement and attacks sorted, I wrote the thing that lists every move in a position. The normal moves were easy by this point, but chess has a pile of special cases I had to handle one at a time: pawns pushing one or two squares, captures, en passant, promoting into four different pieces, and castling (which needs the squares empty and not under attack).</p>
+          <p class="text-neutral-400 leading-relaxed">To keep moves cheap to throw around, I packed each one into a single integer: the from-square, to-square, which piece, any promotion, and a few flags (capture, double-push, en passant, castle) all bit-packed together. One macro to build it, a few more to pull the pieces back out.</p>
+        </div>
+
+        <div class="relative pl-12">
+          <div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-[#C9A24D]/10 text-[#C9A24D] border border-[#C9A24D]/35 grid place-items-center text-xs font-bold">8</div>
+          <p class="text-[11px] uppercase tracking-[0.2em] text-neutral-500 mb-1">Applying and filtering moves</p>
+          <h4 class="text-xl font-semibold mb-3 text-white">Actually playing a move, and tossing the illegal ones</h4>
+          <p class="text-neutral-400 leading-relaxed mb-3">Everything up to here was 'pseudo-legal': moves that follow how a piece moves but might leave your own king sitting in check, which obviously isn't allowed. So I wrote <code class="code-chip">make_move</code> to properly apply a move: move the piece, clear a captured one, handle en passant and promotion, shuffle the rook on castling, update castling rights, flip whose turn it is, rebuild the occupancies.</p>
+          <p class="text-neutral-400 leading-relaxed">The legality filter on top of that was actually simple: copy the board, make the move on the copy, and ask my <code class="code-chip">is_square_attacked</code> function whether my own king is now in check. If it is, throw the move out. Whatever survives is the real, legal move list.</p>
+        </div>
+
+        <div class="relative pl-12">
+          <div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-[#C9A24D]/10 text-[#C9A24D] border border-[#C9A24D]/35 grid place-items-center text-xs font-bold">9</div>
+          <p class="text-[11px] uppercase tracking-[0.2em] text-neutral-500 mb-1">Evaluating positions</p>
+          <h4 class="text-xl font-semibold mb-3 text-white">Deciding which positions are actually good</h4>
+          <p class="text-neutral-400 leading-relaxed mb-3">An engine needs an opinion on whether a position is good or bad. I started dead simple: just count material. Pawn 1, knight and bishop 3, rook 5, queen 9, then add up White and subtract Black. That alone is enough to stop it from hanging pieces.</p>
+          <p class="text-neutral-400 leading-relaxed">Then I made it smarter with piece-square tables: every piece gets a small bonus or penalty depending on where it's sitting. Knights like the centre, pawns want to march up the board, the king should tuck itself away early. It's all scored from White's side, and the search just flips the sign when it's Black's turn.</p>
+        </div>
+
+        <div class="relative pl-12">
+          <div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-[#C9A24D]/10 text-[#C9A24D] border border-[#C9A24D]/35 grid place-items-center text-xs font-bold">10</div>
+          <p class="text-[11px] uppercase tracking-[0.2em] text-neutral-500 mb-1">Looking ahead</p>
+          <h4 class="text-xl font-semibold mb-3 text-white">Searching the future (negamax + alpha-beta)</h4>
+          <p class="text-neutral-400 leading-relaxed mb-3">Now the part that actually 'thinks'. To pick a move it looks ahead: try a move, imagine the opponent's best reply, then my best reply to that, and so on, and keep whatever leads to the best spot. The neat trick is negamax. Since a great position for me is an equally bad one for my opponent, I can just flip the score at each level and reuse the exact same code for both sides.</p>
+          <p class="text-neutral-400 leading-relaxed">Searching everything is hopelessly slow, so I added alpha-beta pruning: the moment a line is proven worse than something I've already found, I stop looking at it entirely. Same best move, a fraction of the work. Checkmate scores as a huge negative, stalemate as zero.</p>
+        </div>
+
+        <div class="relative pl-12">
+          <div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-[#C9A24D]/10 text-[#C9A24D] border border-[#C9A24D]/35 grid place-items-center text-xs font-bold">11</div>
+          <p class="text-[11px] uppercase tracking-[0.2em] text-neutral-500 mb-1">The difficulty dial</p>
+          <h4 class="text-xl font-semibold mb-3 text-white">Strength is basically one number</h4>
+          <p class="text-neutral-400 leading-relaxed mb-3">There's really only one knob for difficulty: how many moves deep the search looks. Two deep is instant but not great, seven deep takes a few seconds and is really tough to beat.</p>
+          <p class="text-neutral-400 leading-relaxed">Every extra level multiplies the work though. Depth eight already blows past a minute right now on my Mac.</p>
+        </div>
+
+        <div class="relative pl-12">
+          <div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-[#C9A24D]/10 text-[#C9A24D] border border-[#C9A24D]/35 grid place-items-center text-xs font-bold">12</div>
+          <p class="text-[11px] uppercase tracking-[0.2em] text-neutral-500 mb-1">Hooking up the browser</p>
+          <h4 class="text-xl font-semibold mb-3 text-white">Getting C to talk to the web</h4>
+          <p class="text-neutral-400 leading-relaxed mb-3">Last piece was getting the two halves to talk. A tiny Next.js route spawns the compiled C program as a subprocess, passes it the FEN and a depth, and reads back the single move it prints out. That's the entire contract between them.</p>
+          <p class="text-neutral-400 leading-relaxed">On the browser side, chess.js handles the rules and react-chessboard draws everything. Those are the libraries I leaned on so I could spend my time on the engine instead.</p>
+        </div>
+
+        <div class="relative pl-12">
+          <div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-[#C9A24D]/10 text-[#C9A24D] border border-[#C9A24D]/35 grid place-items-center text-xs font-bold">13</div>
+          <p class="text-[11px] uppercase tracking-[0.2em] text-neutral-500 mb-1">Where it's going</p>
+          <h4 class="text-xl font-semibold mb-3 text-white">Stuff I still want to add</h4>
+          <p class="text-neutral-400 leading-relaxed mb-3">There are a few things I'd be interested in improving from here. The one I'd start with is move ordering, which tries captures before quiet moves so alpha-beta prunes way harder. After that, quiescence search, so it stops freezing the count in the middle of a trade and seeing ghosts a move past where it looked.</p>
+          <p class="text-neutral-400 leading-relaxed">I'd also like to add iterative deepening and a transposition table so it remembers positions it's already analyzed instead of redoing them. Every one of those buys more depth for the same time, and depth is basically strength.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="mb-12 card border-l-4 border-l-[#C9A24D] p-5 sm:p-6">
+      <div class="flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-neutral-500 mb-3">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+        A note on credit
+      </div>
+      <p class="text-neutral-400 leading-relaxed mb-3">
+        The point of this project, and the part I actually built, is the <span class="font-semibold gold">engine</span>: the C program that finds the move the computer plays against you. That is the real work here.
+      </p>
+      <p class="text-neutral-400 leading-relaxed">
+        Everything wrapped around it, the board UI, the animations, the themes, the dramatic flourishes, was built by <span class="font-semibold text-white">Claude</span>. I was just having fun dressing the engine up after getting the engine working.
+      </p>
+    </div>
+
+    <h3 class="text-xl font-semibold mb-4 text-white">Technology Stack</h3>
+
+    <div class="mb-6">
+      <p class="text-neutral-400 font-semibold mb-2">Engine:</p>
+      <div class="flex flex-wrap gap-2 mb-4">
+        <span class="tag">C</span>
+      </div>
+    </div>
+
+    <div class="mb-8">
+      <p class="text-neutral-400 font-semibold mb-2">Frontend:</p>
+      <div class="flex flex-wrap gap-2 mb-4">
+        <span class="tag">Next.js</span>
+        <span class="tag">React</span>
+        <span class="tag">TypeScript</span>
+        <span class="tag">Tailwind CSS</span>
+        <span class="tag">chess.js</span>
+        <span class="tag">react-chessboard</span>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-10 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <p class="text-neutral-400">Copyright © 2025 - All right reserved by Mahmoud Shalabi</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      loadNavbar(false);
+    });
+  </script>
+
+</body>
+</html>

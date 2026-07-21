@@ -5,19 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI Image Classifier | Mahmoud Shalabi</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="theme.css" />
   <script src="navbar.js"></script>
-  <style>
-    body { font-family: 'Inter', sans-serif; }
-  </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body>
   
   <div id="navbar-container"></div>
 
-  <header class="bg-gradient-to-br from-blue-50 to-white py-16 pt-32">
+  <header class="page-head">
     <div class="max-w-4xl mx-auto px-4">
-      <a href="index.html#projects" class="inline-flex items-center gap-2 text-gray-600 hover:text-blue-600 transition mb-6">
+      <a href="index.html#projects" class="inline-flex items-center gap-2 text-neutral-400 hover:text-[#C9A24D] transition mb-6">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
         </svg>
@@ -30,17 +28,17 @@
       </div>
       <div class="text-center">
         <h1 class="text-4xl sm:text-5xl font-extrabold mb-4">AI Image Classifier</h1>
-        <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto mb-6">
+        <p class="text-lg sm:text-xl text-neutral-400 max-w-3xl mx-auto mb-6">
           A custom-built convolutional neural network that classifies images of cats and dogs, developed entirely from scratch using TensorFlow and Flask.
         </p>
         <div class="flex flex-wrap gap-4 justify-center">
-          <a href="https://ai.mahmoudshalabi.com" target="_blank" class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-full shadow-lg hover:from-blue-700 hover:to-blue-800 transition font-semibold">
+          <a href="https://ai.mahmoudshalabi.com" target="_blank" class="btn-gold">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
             </svg>
             Try Live Demo
           </a>
-          <a href="https://github.com/Moodie0079/animal-classifier" target="_blank" class="inline-flex items-center gap-2 px-8 py-4 bg-gray-800 text-white rounded-full shadow-lg hover:bg-gray-900 transition font-semibold">
+          <a href="https://github.com/Moodie0079/animal-classifier" target="_blank" class="btn-ghost">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
               <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
             </svg>
@@ -53,20 +51,20 @@
 
   <section class="max-w-5xl mx-auto px-4 py-8 sm:py-16">
     <h2 class="text-2xl font-semibold mb-6">Project Overview</h2>
-    <p class="text-gray-700 leading-relaxed mb-8">
+    <p class="text-neutral-400 leading-relaxed mb-8">
       This image classification web application was developed entirely from scratch using Python, TensorFlow, Flask, and vanilla frontend. It allows users to upload an image of a cat or dog and returns a prediction based on a custom trained convolutional neural network (CNN).
     </p>
 
     <h3 class="text-xl font-semibold mb-4">Model Info</h3>
-    <p class="text-gray-700 leading-relaxed mb-4">
+    <p class="text-neutral-400 leading-relaxed mb-4">
       This model was trained on a dataset of ~19,000 labeled images of cats and dogs. The model was implemented using tf.keras.Sequential, allowing layers to be stacked sequentially so data flows straight through from the input image to the final prediction. The network was built entirely from scratch without pretrained weights or external model libraries.
     </p>
-    <p class="text-gray-700 leading-relaxed mb-8 ml-4">
+    <p class="text-neutral-400 leading-relaxed mb-8 ml-4">
       <strong>Architecture:</strong> Three convolutional blocks (Conv2D + MaxPooling2D) followed by a Flatten layer and dense layers with softmax activation for binary classification.
     </p>
 
     <h3 class="text-xl font-semibold mb-4">Key Features</h3>
-    <ul class="space-y-3 list-disc list-inside text-gray-700 mb-8">
+    <ul class="space-y-3 list-disc list-inside text-neutral-400 mb-8">
       <li>Custom trained convolutional neural network (CNN) for binary image classification</li>
       <li>Trained on ~19,000 labeled images of cats and dogs</li>
       <li>Built using tf.keras.Sequential architecture from scratch without pretrained weights</li>
@@ -82,44 +80,44 @@
     <h3 class="text-xl font-semibold mb-4">Technical Implementation</h3>
     
     <div class="mb-6">
-      <p class="text-gray-700 font-semibold mb-2">Backend:</p>
-      <p class="text-gray-700 leading-relaxed mb-2 ml-4">
+      <p class="text-neutral-400 font-semibold mb-2">Backend:</p>
+      <p class="text-neutral-400 leading-relaxed mb-2 ml-4">
         After training, the model was saved in .h5 format and loaded by a Flask app. The backend exposes a GET route for this page and a POST route (/predict) that accepts an image, preprocesses it with Pillow, and returns JSON containing the predicted label and confidence.
       </p>
     </div>
 
     <div class="mb-8">
-      <p class="text-gray-700 font-semibold mb-2">Frontend:</p>
-      <p class="text-gray-700 leading-relaxed mb-4 ml-4">
+      <p class="text-neutral-400 font-semibold mb-2">Frontend:</p>
+      <p class="text-neutral-400 leading-relaxed mb-4 ml-4">
         The interface is plain HTML styled with TailwindCSS. JavaScript handles image preview, disables/enables the Predict button, shows a spinner during inference, and animates the confidence bar once a result is received.
       </p>
     </div>
 
     <h3 class="text-xl font-semibold mb-4">Problems & Solutions</h3>
-    <p class="text-gray-700 leading-relaxed mb-4"><strong>Overfitting Issues:</strong></p>
-    <p class="text-gray-700 leading-relaxed mb-2 ml-4">
+    <p class="text-neutral-400 leading-relaxed mb-4"><strong>Overfitting Issues:</strong></p>
+    <p class="text-neutral-400 leading-relaxed mb-2 ml-4">
       <strong>Problem:</strong> Initial accuracy was poor due to overfitting.
     </p>
-    <p class="text-gray-700 leading-relaxed mb-8 ml-4">
+    <p class="text-neutral-400 leading-relaxed mb-8 ml-4">
       <strong>Solution:</strong> Introduced data augmentation (RandomFlip, RandomRotation, RandomZoom) applied only to the training set. Also added an EarlyStopping callback that monitors validation loss and restores the best weights when no improvement is seen for 10 epochs.
     </p>
 
     <h3 class="text-xl font-semibold mb-4">Technology Stack</h3>
     <div class="flex flex-wrap gap-3 mb-8">
-      <span class="px-3 py-1 rounded-full bg-gray-100 text-sm">Python</span>
-      <span class="px-3 py-1 rounded-full bg-gray-100 text-sm">TensorFlow</span>
-      <span class="px-3 py-1 rounded-full bg-gray-100 text-sm">Keras</span>
-      <span class="px-3 py-1 rounded-full bg-gray-100 text-sm">Flask</span>
-      <span class="px-3 py-1 rounded-full bg-gray-100 text-sm">Pillow</span>
-      <span class="px-3 py-1 rounded-full bg-gray-100 text-sm">HTML</span>
-      <span class="px-3 py-1 rounded-full bg-gray-100 text-sm">TailwindCSS</span>
-      <span class="px-3 py-1 rounded-full bg-gray-100 text-sm">JavaScript</span>
+      <span class="tag">Python</span>
+      <span class="tag">TensorFlow</span>
+      <span class="tag">Keras</span>
+      <span class="tag">Flask</span>
+      <span class="tag">Pillow</span>
+      <span class="tag">HTML</span>
+      <span class="tag">TailwindCSS</span>
+      <span class="tag">JavaScript</span>
     </div>
   </section>
 
-  <footer class="bg-white py-10 border-t border-gray-200">
+  <footer class="py-10 border-t border-white/5">
     <div class="max-w-7xl mx-auto px-4 text-center">
-      <p class="text-gray-600">Copyright © 2025 - All right reserved by Mahmoud Shalabi</p>
+      <p class="text-neutral-400">Copyright © 2025 - All right reserved by Mahmoud Shalabi</p>
     </div>
   </footer>
 

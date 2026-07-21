@@ -4,121 +4,140 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mahmoud Shalabi | Portfolio</title>
+  <meta name="description" content="Mahmoud Shalabi — Computer Science student at Carleton University. Projects in AI, machine learning, systems, and full-stack web development." />
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="theme.css" />
   <script src="navbar.js"></script>
-  <style>
-    body { font-family: 'Inter', sans-serif; }
-    html { scroll-behavior: smooth; }
-  </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
-  
+<body>
+
   <div id="navbar-container"></div>
 
-  <!-- Hero Section -->
-  <header class="bg-gradient-to-br from-blue-50 to-white py-20 sm:py-28 pt-32 sm:pt-40">
-    <div class="max-w-4xl mx-auto text-center px-4">
-      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 leading-tight text-gray-900">Mahmoud Shalabi</h1>
-      <p class="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto mb-8 leading-relaxed">
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-field">
+      <div class="hero-dots"></div>
+      <div class="hero-spot"></div>
+    </div>
+
+    <div class="wrap text-center relative">
+      <p class="eyebrow reveal">Welcome</p>
+      <h1 class="mt-5 font-extrabold tracking-tight leading-[1.05]">
+        <span class="block text-3xl sm:text-4xl md:text-5xl text-white reveal" style="--d:80ms">I'm</span>
+        <span class="block text-4xl sm:text-6xl md:text-7xl lg:text-8xl gold mt-1 reveal" style="--d:160ms">Mahmoud Shalabi</span>
+      </h1>
+      <p class="mt-7 text-lg sm:text-xl text-neutral-400 reveal" style="--d:240ms">
         Studying Computer Science at Carleton University.
       </p>
-      <a href="#projects" class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-full shadow-lg hover:from-blue-700 hover:to-blue-800 transition transform hover:scale-105">
-        Learn More
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-        </svg>
-      </a>
     </div>
+
+    <a href="#projects" class="scroll-cue" aria-label="Scroll to projects">
+      <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"></path>
+      </svg>
+    </a>
   </header>
 
-  <!-- Projects Section -->
-  <section id="projects" class="bg-gray-100 py-20">
-    <div class="max-w-7xl mx-auto px-4">
-      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-900">Projects</h2>
-      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        <a href="coursescout.html" class="block hover:ring-2 ring-blue-400 rounded-xl transition transform hover:scale-105">
-          <article class="bg-white border border-gray-200 rounded-xl shadow-sm p-6 h-full">
-            <div class="h-48 rounded-lg mb-4 overflow-hidden">
-              <img src="coursescout-thumbnail.png" alt="CourseScout Landing Page" class="w-full h-full object-cover rounded-lg">
+  <!-- Projects -->
+  <section id="projects" class="section-alt">
+    <div class="wrap">
+      <h2 class="h-section reveal">Projects</h2>
+      <p class="h-sub reveal" style="--d:60ms">Things I've built, and what went into them.</p>
+
+      <div class="mt-14 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
+
+        <a href="chess-engine.html" class="card-link reveal" style="--d:60ms">
+          <article class="card h-full p-5 flex flex-col">
+            <div class="h-48 rounded-xl overflow-hidden mb-5">
+              <img src="chess-thumbnail.png" alt="Chess Engine" class="w-full h-full object-cover">
             </div>
-            <h3 class="text-xl font-semibold mb-2 text-blue-600">CourseScout</h3>
-            <p class="text-gray-600 text-sm mb-4">AI-powered course insight platform for University students. Analyzes Reddit discussions to provide information about courses and professors based on real student experiences to help with course selection.</p>
-            <div class="mb-4">
-              <div class="flex flex-wrap gap-1.5 text-xs">
-                <span class="px-2 py-1 rounded bg-blue-50 text-blue-700 border border-blue-200">Next.js</span>
-                <span class="px-2 py-1 rounded bg-blue-50 text-blue-700 border border-blue-200">React</span>
-                <span class="px-2 py-1 rounded bg-blue-50 text-blue-700 border border-blue-200">TypeScript</span>
-                <span class="px-2 py-1 rounded bg-blue-50 text-blue-700 border border-blue-200">Tailwind CSS</span>
-                <span class="px-2 py-1 rounded bg-blue-50 text-blue-700 border border-blue-200">Prisma ORM</span>
-                <span class="px-2 py-1 rounded bg-blue-50 text-blue-700 border border-blue-200">PostgreSQL</span>
-              </div>
+            <h3 class="text-xl font-semibold text-white mb-2">Chess Engine</h3>
+            <p class="text-sm text-neutral-400 leading-relaxed mb-5 flex-1">Chess engine built from scratch in C. It's the computer you play against, the part of a chess program that reads the position, works out the best move it can find, and plays it.</p>
+            <div class="flex flex-wrap gap-1.5 mb-5">
+              <span class="tag">C</span>
+              <span class="tag">Next.js</span>
+              <span class="tag">React</span>
+              <span class="tag">TypeScript</span>
             </div>
-            <span class="text-blue-600 text-sm font-medium">View Details&nbsp;↗</span>
+            <span class="link-gold">View Details</span>
           </article>
         </a>
 
-        <a href="crypto-paper-trader.html" class="block hover:ring-2 ring-blue-400 rounded-xl transition transform hover:scale-105">
-          <article class="bg-white border border-gray-200 rounded-xl shadow-sm p-6 h-full">
-            <div class="h-48 rounded-lg mb-4 overflow-hidden">
-              <img src="cryptotrader.png" alt="Crypto Paper Trader" class="w-full h-full object-cover rounded-lg">
+        <a href="coursescout.html" class="card-link reveal" style="--d:120ms">
+          <article class="card h-full p-5 flex flex-col">
+            <div class="h-48 rounded-xl overflow-hidden mb-5">
+              <img src="coursescout-thumbnail.png" alt="CourseScout Landing Page" class="w-full h-full object-cover">
             </div>
-            <h3 class="text-xl font-semibold mb-2 text-blue-600">Crypto Paper Trader</h3>
-            <p class="text-gray-600 text-sm mb-4">Real-time cryptocurrency paper trading simulator for practicing trades with live market prices. Built with Ruby on Rails and React, featuring WebSocket connections for live price updates.</p>
-            <div class="mb-4">
-              <div class="flex flex-wrap gap-1.5 text-xs">
-                <span class="px-2 py-1 rounded bg-blue-50 text-blue-700 border border-blue-200">Ruby on Rails</span>
-                <span class="px-2 py-1 rounded bg-blue-50 text-blue-700 border border-blue-200">React</span>
-                <span class="px-2 py-1 rounded bg-blue-50 text-blue-700 border border-blue-200">TypeScript</span>
-                <span class="px-2 py-1 rounded bg-blue-50 text-blue-700 border border-blue-200">MySQL</span>
-                <span class="px-2 py-1 rounded bg-blue-50 text-blue-700 border border-blue-200">WebSockets</span>
-              </div>
+            <h3 class="text-xl font-semibold text-white mb-2">CourseScout</h3>
+            <p class="text-sm text-neutral-400 leading-relaxed mb-5 flex-1">AI-powered course insight platform for University students. Analyzes Reddit discussions to provide information about courses and professors based on real student experiences to help with course selection.</p>
+            <div class="flex flex-wrap gap-1.5 mb-5">
+              <span class="tag">Next.js</span>
+              <span class="tag">React</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">Tailwind CSS</span>
+              <span class="tag">Prisma ORM</span>
+              <span class="tag">PostgreSQL</span>
             </div>
-            <span class="text-blue-600 text-sm font-medium">View Details&nbsp;↗</span>
+            <span class="link-gold">View Details</span>
           </article>
         </a>
 
-        <a href="ai-classifier.html" class="block hover:ring-2 ring-blue-400 rounded-xl transition transform hover:scale-105">
-          <article class="bg-white border border-gray-200 rounded-xl shadow-sm p-6 h-full">
-            <div class="h-48 rounded-lg mb-4 overflow-hidden">
-              <img src="imageclassifier-thumbnail.png" alt="AI Image Classifier" class="w-full h-full object-cover rounded-lg">
+        <a href="crypto-paper-trader.html" class="card-link reveal" style="--d:180ms">
+          <article class="card h-full p-5 flex flex-col">
+            <div class="h-48 rounded-xl overflow-hidden mb-5">
+              <img src="cryptotrader.png" alt="Crypto Paper Trader" class="w-full h-full object-cover">
             </div>
-            <h3 class="text-xl font-semibold mb-2 text-blue-600">AI Image Classifier</h3>
-            <p class="text-gray-600 text-sm mb-4">Custom TensorFlow/Keras CNN served with Flask that predicts if an image is a cat or dog.</p>
-            <div class="mb-4">
-              <div class="flex flex-wrap gap-1.5 text-xs">
-                <span class="px-2 py-1 rounded bg-blue-50 text-blue-700 border border-blue-200">Python</span>
-                <span class="px-2 py-1 rounded bg-blue-50 text-blue-700 border border-blue-200">TensorFlow</span>
-                <span class="px-2 py-1 rounded bg-blue-50 text-blue-700 border border-blue-200">Keras</span>
-                <span class="px-2 py-1 rounded bg-blue-50 text-blue-700 border border-blue-200">Flask</span>
-              </div>
+            <h3 class="text-xl font-semibold text-white mb-2">Crypto Paper Trader</h3>
+            <p class="text-sm text-neutral-400 leading-relaxed mb-5 flex-1">Real-time cryptocurrency paper trading simulator for practicing trades with live market prices. Built with Ruby on Rails and React, featuring WebSocket connections for live price updates.</p>
+            <div class="flex flex-wrap gap-1.5 mb-5">
+              <span class="tag">Ruby on Rails</span>
+              <span class="tag">React</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">WebSockets</span>
             </div>
-            <span class="text-blue-600 text-sm font-medium">View Details&nbsp;↗</span>
+            <span class="link-gold">View Details</span>
           </article>
         </a>
 
-        <a href="game-dev.html" class="block hover:ring-2 ring-blue-400 rounded-xl transition transform hover:scale-105">
-          <article class="bg-white border border-gray-200 rounded-xl shadow-sm p-6 h-full">
-            <div class="h-48 rounded-lg mb-4 overflow-hidden">
-              <img src="gamedev-thumbnail.png" alt="Game Development Showcase" class="w-full h-full object-cover rounded-lg">
+        <a href="ai-classifier.html" class="card-link reveal" style="--d:60ms">
+          <article class="card h-full p-5 flex flex-col">
+            <div class="h-48 rounded-xl overflow-hidden mb-5">
+              <img src="imageclassifier-thumbnail.png" alt="AI Image Classifier" class="w-full h-full object-cover">
             </div>
-            <h3 class="text-xl font-semibold mb-2 text-blue-600">Game Development&nbsp;Showcase</h3>
-            <p class="text-gray-600 text-sm mb-4">Prototypes and renders made with Unity, Unreal Engine, and Blender.</p>
-            <div class="mb-4">
-              <div class="flex flex-wrap gap-1.5 text-xs">
-                <span class="px-2 py-1 rounded bg-blue-50 text-blue-700 border border-blue-200">Unity</span>
-                <span class="px-2 py-1 rounded bg-blue-50 text-blue-700 border border-blue-200">Unreal Engine</span>
-                <span class="px-2 py-1 rounded bg-blue-50 text-blue-700 border border-blue-200">Blender</span>
-                <span class="px-2 py-1 rounded bg-blue-50 text-blue-700 border border-blue-200">C#</span>
-              </div>
+            <h3 class="text-xl font-semibold text-white mb-2">AI Image Classifier</h3>
+            <p class="text-sm text-neutral-400 leading-relaxed mb-5 flex-1">Custom TensorFlow/Keras CNN served with Flask that predicts if an image is a cat or dog.</p>
+            <div class="flex flex-wrap gap-1.5 mb-5">
+              <span class="tag">Python</span>
+              <span class="tag">TensorFlow</span>
+              <span class="tag">Keras</span>
+              <span class="tag">Flask</span>
             </div>
-            <span class="text-blue-600 text-sm font-medium">View Projects&nbsp;↗</span>
+            <span class="link-gold">View Details</span>
           </article>
         </a>
 
-        <a href="student-grade.html" class="block hover:ring-2 ring-blue-400 rounded-xl transition transform hover:scale-105">
-          <article class="bg-white border border-gray-200 rounded-xl shadow-sm p-6 h-full">
-            <div class="h-48 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 rounded-lg mb-4 overflow-hidden relative">
+        <a href="game-dev.html" class="card-link reveal" style="--d:120ms">
+          <article class="card h-full p-5 flex flex-col">
+            <div class="h-48 rounded-xl overflow-hidden mb-5">
+              <img src="gamedev-thumbnail.png" alt="Game Development Showcase" class="w-full h-full object-cover">
+            </div>
+            <h3 class="text-xl font-semibold text-white mb-2">Game Development&nbsp;Showcase</h3>
+            <p class="text-sm text-neutral-400 leading-relaxed mb-5 flex-1">Prototypes and renders made with Unity, Unreal Engine, and Blender.</p>
+            <div class="flex flex-wrap gap-1.5 mb-5">
+              <span class="tag">Unity</span>
+              <span class="tag">Unreal Engine</span>
+              <span class="tag">Blender</span>
+              <span class="tag">C#</span>
+            </div>
+            <span class="link-gold">View Projects</span>
+          </article>
+        </a>
+
+        <a href="student-grade.html" class="card-link reveal" style="--d:180ms">
+          <article class="card h-full p-5 flex flex-col">
+            <div class="h-48 rounded-xl overflow-hidden mb-5 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 relative">
               <div class="absolute inset-0 bg-white/10 backdrop-blur-sm p-3">
                 <div class="bg-white/90 rounded-lg p-2 h-full flex flex-col">
                   <div class="text-xs font-bold text-gray-800 mb-2 border-b border-gray-300 pb-1">Grade Management</div>
@@ -148,280 +167,293 @@
                 </div>
               </div>
             </div>
-            <h3 class="text-xl font-semibold mb-2 text-blue-600">Student Grade Management System</h3>
-            <p class="text-gray-600 text-sm mb-4">Full‑stack web app that lets teachers securely record and manage student grades with CSV import using SQL.</p>
-            <div class="mb-4">
-              <div class="flex flex-wrap gap-1.5 text-xs">
-                <span class="px-2 py-1 rounded bg-blue-50 text-blue-700 border border-blue-200">PHP</span>
-                <span class="px-2 py-1 rounded bg-blue-50 text-blue-700 border border-blue-200">MySQL</span>
-                <span class="px-2 py-1 rounded bg-blue-50 text-blue-700 border border-blue-200">HTML & CSS</span>
-                <span class="px-2 py-1 rounded bg-blue-50 text-blue-700 border border-blue-200">JavaScript</span>
-              </div>
+            <h3 class="text-xl font-semibold text-white mb-2">Student Grade Management System</h3>
+            <p class="text-sm text-neutral-400 leading-relaxed mb-5 flex-1">Full‑stack web app that lets teachers securely record and manage student grades with CSV import using SQL.</p>
+            <div class="flex flex-wrap gap-1.5 mb-5">
+              <span class="tag">PHP</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">HTML &amp; CSS</span>
+              <span class="tag">JavaScript</span>
             </div>
-            <span class="text-blue-600 text-sm font-medium">View Details&nbsp;↗</span>
+            <span class="link-gold">View Details</span>
           </article>
         </a>
+
       </div>
     </div>
   </section>
 
-  <!-- Education Section -->
-  <section id="education" class="bg-white py-20">
-    <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-900">Education</h2>
-      
-      <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-200">
-        <div class="flex justify-between items-start mb-4">
-          <span class="text-purple-600 font-medium text-sm">2024 - 2028</span>
-          <p class="text-blue-600 text-sm italic">Ottawa, Canada</p>
-        </div>
-        <h3 class="text-xl font-bold text-gray-900 mb-2">Carleton University</h3>
-        <p class="text-gray-700 font-medium mb-4">Bachelor of Computer Science - AI and ML Stream</p>
-        <div class="mb-4">
-          <p class="text-gray-700 mb-2"><span class="font-semibold">GPA:</span> 11.1/12</p>
-          <p class="text-gray-700 mb-3"><span class="font-semibold">Awards:</span> Dean's List</p>
-        </div>
-        <div>
-          <p class="text-gray-700 font-semibold mb-3">Relevant Coursework:</p>
-          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1 list-disc list-inside text-gray-700 text-sm ml-2">
-            <li>Computer Science</li>
-            <li>Discrete Structures</li>
-            <li>Systems Programming</li>
-            <li>Abstract Data Types and Algorithms</li>
-            <li>Software Engineering</li>
-            <li>Fundamentals of Web Applications</li>
-            <li>Operating Systems</li>
-            <li>Object-Oriented Software Engineering</li>
-            <li>Database Management Systems</li>
-            <li>Programming Paradigms</li>
-            <li>Design and Analysis of Algorithms</li>
-            <li>Machine Learning</li>
-            <li>Artificial Intelligence</li>
-            <li>Neural Networks</li>
-            <li>Calculus</li>
-            <li>Linear Algebra</li>
-            <li>Probability Models</li>
-            <li>Statistical Modeling</li>
+  <!-- Work Experience -->
+  <section id="experience" class="section">
+    <div class="wrap-narrow">
+      <h2 class="h-section reveal">Work Experience</h2>
+
+      <div class="mt-14 space-y-6">
+
+        <article class="card p-8 sm:p-10 reveal" style="--d:80ms">
+          <div class="flex flex-wrap justify-between items-start gap-3 mb-5">
+            <span class="tag">May 2026 &ndash; Present</span>
+          </div>
+
+          <h3 class="text-2xl font-bold text-white mb-2">Ericsson</h3>
+          <p class="text-neutral-300 font-medium">Software Developer</p>
+
+          <!-- To expand this entry, drop a list in here:
+          <ul class="mt-6 space-y-2 text-sm text-neutral-400">
+            <li class="flex gap-2"><span class="gold">&#8226;</span>What you built or worked on</li>
           </ul>
+          -->
+        </article>
+
+        <!-- Additional roles: copy the <article> above and change the contents. -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education" class="section-alt">
+    <div class="wrap-narrow">
+      <h2 class="h-section reveal">Education</h2>
+
+      <div class="mt-14 card p-8 sm:p-10 reveal" style="--d:80ms">
+        <div class="flex flex-wrap justify-between items-start gap-3 mb-5">
+          <span class="tag">2024 &ndash; 2028</span>
+          <span class="text-sm text-neutral-500">Ottawa, Canada</span>
+        </div>
+
+        <h3 class="text-2xl font-bold text-white mb-2">Carleton University</h3>
+        <p class="text-neutral-300 font-medium mb-6">Bachelor of Computer Science &ndash; AI and ML Stream</p>
+
+        <div class="grid sm:grid-cols-2 gap-4 mb-8">
+          <div class="rounded-xl border border-[color:var(--gold-line)] px-5 py-4">
+            <p class="eyebrow mb-1">GPA</p>
+            <p class="text-xl font-semibold gold">11.1 / 12</p>
+          </div>
+          <div class="rounded-xl border border-[color:var(--gold-line)] px-5 py-4">
+            <p class="eyebrow mb-1">Awards</p>
+            <p class="text-xl font-semibold gold">Dean's List</p>
+          </div>
+        </div>
+
+        <p class="text-neutral-300 font-semibold mb-4">Relevant Coursework</p>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 text-sm text-neutral-400">
+          <li class="flex gap-2"><span class="gold">&#8226;</span>Computer Science</li>
+          <li class="flex gap-2"><span class="gold">&#8226;</span>Discrete Structures</li>
+          <li class="flex gap-2"><span class="gold">&#8226;</span>Systems Programming</li>
+          <li class="flex gap-2"><span class="gold">&#8226;</span>Abstract Data Types and Algorithms</li>
+          <li class="flex gap-2"><span class="gold">&#8226;</span>Software Engineering</li>
+          <li class="flex gap-2"><span class="gold">&#8226;</span>Fundamentals of Web Applications</li>
+          <li class="flex gap-2"><span class="gold">&#8226;</span>Operating Systems</li>
+          <li class="flex gap-2"><span class="gold">&#8226;</span>Object-Oriented Software Engineering</li>
+          <li class="flex gap-2"><span class="gold">&#8226;</span>Database Management Systems</li>
+          <li class="flex gap-2"><span class="gold">&#8226;</span>Programming Paradigms</li>
+          <li class="flex gap-2"><span class="gold">&#8226;</span>Design and Analysis of Algorithms</li>
+          <li class="flex gap-2"><span class="gold">&#8226;</span>Machine Learning</li>
+          <li class="flex gap-2"><span class="gold">&#8226;</span>Artificial Intelligence</li>
+          <li class="flex gap-2"><span class="gold">&#8226;</span>Neural Networks</li>
+          <li class="flex gap-2"><span class="gold">&#8226;</span>Calculus</li>
+          <li class="flex gap-2"><span class="gold">&#8226;</span>Linear Algebra</li>
+          <li class="flex gap-2"><span class="gold">&#8226;</span>Probability Models</li>
+          <li class="flex gap-2"><span class="gold">&#8226;</span>Statistical Modeling</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="section">
+    <div class="wrap">
+      <h2 class="h-section reveal">Technical Skills</h2>
+
+      <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+        <div class="reveal" style="--d:40ms">
+          <div class="card skill-cat p-6 text-center mb-4">
+            <div class="badge-outline mx-auto mb-3">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-white">Front End</h3>
+          </div>
+          <div class="space-y-2">
+            <div class="card px-4 py-3 text-sm text-neutral-300">HTML &amp; CSS</div>
+            <div class="card px-4 py-3 text-sm text-neutral-300">TailwindCSS</div>
+            <div class="card px-4 py-3 text-sm text-neutral-300">Bootstrap</div>
+            <div class="card px-4 py-3 text-sm text-neutral-300">JavaScript</div>
+            <div class="card px-4 py-3 text-sm text-neutral-300">TypeScript</div>
+            <div class="card px-4 py-3 text-sm text-neutral-300">React</div>
+            <div class="card px-4 py-3 text-sm text-neutral-300">Next.js</div>
+          </div>
+        </div>
+
+        <div class="reveal" style="--d:100ms">
+          <div class="card skill-cat p-6 text-center mb-4">
+            <div class="badge-outline mx-auto mb-3">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 12V7a2 2 0 012-2h10a2 2 0 012 2v5M5 12h14M5 12v5a2 2 0 002 2h10a2 2 0 002-2v-5M8 8h.01M8 16h.01"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-white">Back End</h3>
+          </div>
+          <div class="space-y-2">
+            <div class="card px-4 py-3 text-sm text-neutral-300">Python</div>
+            <div class="card px-4 py-3 text-sm text-neutral-300">Java</div>
+            <div class="card px-4 py-3 text-sm text-neutral-300">C</div>
+            <div class="card px-4 py-3 text-sm text-neutral-300">C#</div>
+            <div class="card px-4 py-3 text-sm text-neutral-300">PHP</div>
+            <div class="card px-4 py-3 text-sm text-neutral-300">Ruby on Rails</div>
+            <div class="card px-4 py-3 text-sm text-neutral-300">Node.js</div>
+            <div class="card px-4 py-3 text-sm text-neutral-300">Flask</div>
+          </div>
+        </div>
+
+        <div class="reveal" style="--d:160ms">
+          <div class="card skill-cat p-6 text-center mb-4">
+            <div class="badge-outline mx-auto mb-3">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <ellipse cx="12" cy="6" rx="8" ry="3" stroke-width="1.8"></ellipse>
+                <path stroke-linecap="round" stroke-width="1.8" d="M4 6v6c0 1.66 3.58 3 8 3s8-1.34 8-3V6M4 12v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-white">Databases</h3>
+          </div>
+          <div class="space-y-2">
+            <div class="card px-4 py-3 text-sm text-neutral-300">MySQL</div>
+            <div class="card px-4 py-3 text-sm text-neutral-300">PostgreSQL</div>
+            <div class="card px-4 py-3 text-sm text-neutral-300">SQLite</div>
+            <div class="card px-4 py-3 text-sm text-neutral-300">Prisma ORM</div>
+          </div>
+        </div>
+
+        <div class="reveal" style="--d:220ms">
+          <div class="card skill-cat p-6 text-center mb-4">
+            <div class="badge-outline mx-auto mb-3">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 3a3 3 0 00-3 3 3 3 0 00-2 5.2A3 3 0 008 17a3 3 0 004 2 3 3 0 004-2 3 3 0 001-5.8A3 3 0 0015 6a3 3 0 00-3-3zM12 3v18"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-white">Machine Learning &amp; AI</h3>
+          </div>
+          <div class="space-y-2">
+            <div class="card px-4 py-3 text-sm text-neutral-300">TensorFlow</div>
+            <div class="card px-4 py-3 text-sm text-neutral-300">Keras</div>
+          </div>
+        </div>
+
+        <div class="reveal" style="--d:280ms">
+          <div class="card skill-cat p-6 text-center mb-4">
+            <div class="badge-outline mx-auto mb-3">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 12h4m-2-2v4m6-1h.01M17 12h.01M7.5 7h9a4.5 4.5 0 014.42 3.65l.7 3.7A3 3 0 0118.67 18c-1 0-1.9-.5-2.44-1.33L15.5 15.5h-7l-.73 1.17A2.9 2.9 0 015.33 18a3 3 0 01-2.95-3.65l.7-3.7A4.5 4.5 0 017.5 7z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-white">Game Development</h3>
+          </div>
+          <div class="space-y-2">
+            <div class="card px-4 py-3 text-sm text-neutral-300">Unity</div>
+            <div class="card px-4 py-3 text-sm text-neutral-300">Unreal Engine</div>
+            <div class="card px-4 py-3 text-sm text-neutral-300">Blender</div>
+          </div>
+        </div>
+
+        <div class="reveal" style="--d:340ms">
+          <div class="card skill-cat p-6 text-center mb-4">
+            <div class="badge-outline mx-auto mb-3">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 3v12m0 0a3 3 0 103 3 3 3 0 00-3-3zm12-6a3 3 0 10-3-3 3 3 0 003 3zm0 0v3a4 4 0 01-4 4h-4"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-white">DevOps</h3>
+          </div>
+          <div class="space-y-2">
+            <div class="card px-4 py-3 text-sm text-neutral-300">Jenkins</div>
+            <div class="card px-4 py-3 text-sm text-neutral-300">Groovy</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section-alt">
+    <div class="wrap-narrow">
+      <h2 class="h-section reveal">Get In Touch</h2>
+
+      <div class="mt-14 text-center reveal" style="--d:60ms">
+        <p class="eyebrow mb-4">Email</p>
+        <button id="emailContactButton" class="contact-email">mahmouds2006@gmail.com</button>
+        <p class="mt-3 text-xs text-neutral-600">Click to copy</p>
+      </div>
+
+      <div class="contact-rule reveal" style="--d:120ms"></div>
+
+      <div class="flex flex-wrap items-center justify-center gap-x-12 gap-y-6 reveal" style="--d:180ms">
+        <div class="flex items-center gap-2.5 text-sm text-neutral-400">
+          <svg class="w-4 h-4 gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+          </svg>
+          Ottawa, Canada
+        </div>
+
+        <div class="flex gap-3">
+          <a href="https://github.com/Moodie0079" target="_blank" class="social-btn" aria-label="GitHub">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/-mahmoudshalabi/" target="_blank" class="social-btn" aria-label="LinkedIn">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clip-rule="evenodd"></path></svg>
+          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Skills Section -->
-  <section id="skills" class="bg-gray-100 py-20">
-    <div class="max-w-7xl mx-auto px-4">
-      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-900">Technical Skills</h2>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div>
-          <h3 class="text-lg font-semibold text-gray-900 mb-3">Front End</h3>
-          <div class="flex flex-wrap gap-2 text-sm">
-            <span class="px-3 py-1 rounded-full bg-white text-gray-800">HTML & CSS</span>
-            <span class="px-3 py-1 rounded-full bg-white text-gray-800">TailwindCSS</span>
-            <span class="px-3 py-1 rounded-full bg-white text-gray-800">Bootstrap</span>
-            <span class="px-3 py-1 rounded-full bg-white text-gray-800">JavaScript</span>
-            <span class="px-3 py-1 rounded-full bg-white text-gray-800">TypeScript</span>
-            <span class="px-3 py-1 rounded-full bg-white text-gray-800">React</span>
-            <span class="px-3 py-1 rounded-full bg-white text-gray-800">Next.js</span>
-          </div>
-        </div>
-        <div>
-          <h3 class="text-lg font-semibold text-gray-900 mb-3">Back End</h3>
-          <div class="flex flex-wrap gap-2 text-sm">
-            <span class="px-3 py-1 rounded-full bg-white text-gray-800">Python</span>
-            <span class="px-3 py-1 rounded-full bg-white text-gray-800">Java</span>
-            <span class="px-3 py-1 rounded-full bg-white text-gray-800">C</span>
-            <span class="px-3 py-1 rounded-full bg-white text-gray-800">C#</span>
-            <span class="px-3 py-1 rounded-full bg-white text-gray-800">PHP</span>
-            <span class="px-3 py-1 rounded-full bg-white text-gray-800">Ruby on Rails</span>
-            <span class="px-3 py-1 rounded-full bg-white text-gray-800">Node.js</span>
-            <span class="px-3 py-1 rounded-full bg-white text-gray-800">Flask</span>
-          </div>
-        </div>
-        <div>
-          <h3 class="text-lg font-semibold text-gray-900 mb-3">Databases</h3>
-          <div class="flex flex-wrap gap-2 text-sm">
-            <span class="px-3 py-1 rounded-full bg-white text-gray-800">MySQL</span>
-            <span class="px-3 py-1 rounded-full bg-white text-gray-800">PostgreSQL</span>
-            <span class="px-3 py-1 rounded-full bg-white text-gray-800">SQLite</span>
-            <span class="px-3 py-1 rounded-full bg-white text-gray-800">Prisma ORM</span>
-          </div>
-        </div>
-        <div>
-          <h3 class="text-lg font-semibold text-gray-900 mb-3">Machine Learning & AI</h3>
-          <div class="flex flex-wrap gap-2 text-sm">
-            <span class="px-3 py-1 rounded-full bg-white text-gray-800">TensorFlow</span>
-            <span class="px-3 py-1 rounded-full bg-white text-gray-800">Keras</span>
-          </div>
-        </div>
-        <div>
-          <h3 class="text-lg font-semibold text-gray-900 mb-3">Game Development</h3>
-          <div class="flex flex-wrap gap-2 text-sm">
-            <span class="px-3 py-1 rounded-full bg-white text-gray-800">Unity</span>
-            <span class="px-3 py-1 rounded-full bg-white text-gray-800">Unreal Engine</span>
-            <span class="px-3 py-1 rounded-full bg-white text-gray-800">Blender</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="bg-white py-20">
-    <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-12 text-gray-900">Get in Touch</h2>
-      
-      <div class="space-y-6 mb-8 flex flex-col items-center">
-        <div class="flex items-center gap-4 w-full max-w-md justify-center">
-          <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-            </svg>
-          </div>
-          <div class="flex-1 text-left">
-            <p class="text-gray-600 text-sm mb-1">Email</p>
-            <button id="emailContactButton" class="text-gray-900 font-medium hover:text-blue-600 transition cursor-pointer break-all">mahmouds2006@gmail.com</button>
-          </div>
-        </div>
-        
-        <div class="flex items-center gap-4 w-full max-w-md justify-center">
-          <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-            </svg>
-          </div>
-          <div class="flex-1 text-left">
-            <p class="text-gray-600 text-sm mb-1">Location</p>
-            <p class="text-gray-900 font-medium">Ottawa, Canada</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-white py-10 border-t border-gray-200">
-    <div class="max-w-7xl mx-auto px-4 text-center">
-      <p class="text-gray-600">Copyright © 2025 - All right reserved by Mahmoud Shalabi</p>
+  <footer class="py-10 border-t border-white/5">
+    <div class="wrap text-center">
+      <p class="text-sm text-neutral-500">Copyright © 2025 - All right reserved by Mahmoud Shalabi</p>
     </div>
   </footer>
-  
-  <!-- Modal -->
-  <dialog id="copyModal" class="backdrop:bg-black/50 backdrop:backdrop-blur-sm rounded-lg shadow-xl p-0 max-w-md w-[calc(100%-2rem)] sm:w-full mx-auto">
-    <div class="bg-white rounded-lg p-4 sm:p-6">
-      <div class="flex items-start sm:items-center gap-3 sm:gap-4 mb-4">
-        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-          <svg class="w-5 h-5 sm:w-6 sm:h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+  <dialog id="copyModal" class="backdrop:bg-black/70 backdrop:backdrop-blur-sm rounded-2xl p-0 max-w-md w-[calc(100%-2rem)] sm:w-full mx-auto bg-transparent">
+    <div class="card p-6">
+      <div class="flex items-center gap-4 mb-4">
+        <div class="badge">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
           </svg>
         </div>
-        <h3 class="text-lg sm:text-xl font-semibold text-gray-900">Copied to Clipboard!</h3>
+        <h3 class="text-lg font-semibold text-white">Copied to clipboard</h3>
       </div>
-      <p class="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base">Email address copied successfully. You can now paste it wherever you need.</p>
-      <button onclick="document.getElementById('copyModal').close()" class="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition text-sm sm:text-base">
-        Close
-      </button>
+      <p class="text-neutral-400 text-sm mb-6">Email address copied successfully. You can now paste it wherever you need.</p>
+      <button onclick="document.getElementById('copyModal').close()" class="btn-gold w-full justify-center">Close</button>
     </div>
   </dialog>
-  
+
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       loadNavbar(true);
 
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute('href'));
-          if (target) {
-            target.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
-            });
-            const mobileMenu = document.getElementById('mobileMenu');
-            const hamburgerIcon = document.getElementById('hamburgerIcon');
-            const closeIcon = document.getElementById('closeIcon');
-            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-              mobileMenu.classList.add('hidden');
-              hamburgerIcon.classList.remove('hidden');
-              closeIcon.classList.add('hidden');
-            }
-          }
-        });
-      });
-
-      function showCopyModal() {
-        const modal = document.getElementById('copyModal');
-        if (modal) {
-          modal.showModal();
-          
-          modal.addEventListener('click', function(e) {
-            if (e.target === modal) {
-              modal.close();
-            }
-          });
-          
-          setTimeout(() => {
-            modal.close();
-          }, 3000);
-        }
-      }
-
-      function copyEmailToClipboard(button) {
-        const emailAddress = 'mahmouds2006@gmail.com';
-        navigator.clipboard.writeText(emailAddress).then(function() {
-          const svg = button ? button.querySelector('svg') : null;
-          if (svg) {
-            const originalColor = svg.classList.contains('text-green-600') ? 'text-gray-700' : svg.className;
-            svg.className = 'w-5 h-5 text-green-600';
-            setTimeout(() => {
-              svg.className = originalColor;
-            }, 2000);
-          }
-          showCopyModal();
-        }).catch(function() {
-          showCopyModal();
+      const contactButton = document.getElementById('emailContactButton');
+      if (contactButton) {
+        contactButton.addEventListener('click', function () {
+          copyEmail(null);
         });
       }
-
-      setTimeout(function() {
-        const emailButtonDesktop = document.getElementById('emailButtonDesktop');
-        const emailButtonMobile = document.getElementById('emailButtonMobile');
-        const emailContactButton = document.getElementById('emailContactButton');
-        
-        if (emailButtonDesktop) {
-          emailButtonDesktop.addEventListener('click', function() {
-            copyEmailToClipboard(this);
-          });
-        }
-        
-        if (emailButtonMobile) {
-          emailButtonMobile.addEventListener('click', function() {
-            copyEmailToClipboard(this);
-          });
-        }
-        
-        if (emailContactButton) {
-          emailContactButton.addEventListener('click', function() {
-            copyEmailToClipboard(null);
-          });
-        }
-      }, 100);
-
-      const projectCards = document.querySelectorAll('[href$=".html"]');
-      projectCards.forEach(card => {
-        card.addEventListener('click', (e) => {
-          const span = card.querySelector('span');
-          if (span) {
-            const originalText = span.textContent;
-            span.innerHTML = 'Loading... <div class="inline-block w-3 h-3 border border-blue-600 border-t-transparent rounded-full animate-spin ml-1"></div>';
-            setTimeout(() => {
-              if (span) span.textContent = originalText;
-            }, 2000);
-          }
-        });
-      });
     });
+
+    function showCopyModal() {
+      const modal = document.getElementById('copyModal');
+      if (!modal) return;
+      modal.showModal();
+      modal.addEventListener('click', function (e) {
+        if (e.target === modal) modal.close();
+      });
+      setTimeout(() => modal.close(), 3000);
+    }
   </script>
+
 </body>
 </html>
